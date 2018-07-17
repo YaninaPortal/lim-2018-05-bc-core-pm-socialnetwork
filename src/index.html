@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+     
+   <div id="logout">
+     <label for="email">Email</label>
+     <input id="email" type="email" placeholder="email"><br>
+     <label for="password">Password</label>
+     <input id="password" type="password" placeholder="password"><br>
+     <button id="signin" type="button" value="Login">Login</button>
+     <button id="register" type="button" value="Registrate">Registrate</button>
+     <!--<button id="google" type="button">Google</button>
+     <button id="facebook" type="button">Facebook</button>-->
+   </div>
+   <div id="login" class="hiden">
+     <p id="user_name"></p>
+     <input type="button" id="btnLogout" value="Logout">
+   </div>
+   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBDC5jCsH9YilLHYSnbV_rHdV--wCd__GM",
+    authDomain: "feminismo-d7df2.firebaseapp.com",
+    databaseURL: "https://feminismo-d7df2.firebaseio.com",
+    projectId: "feminismo-d7df2",
+    storageBucket: "feminismo-d7df2.appspot.com",
+    messagingSenderId: "992535526426"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+<script src="app.js"></script>
+<!--<script src="index.js"></script>-->
+
+
+
+</body>
+</html>
