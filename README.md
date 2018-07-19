@@ -25,7 +25,7 @@ Se menciona a continuación algunos datos estadisticos , donde se pone en eviden
 * 74% de los usarios de redes sociales, piensan que éstas son un medio de confianza al que acudir cuando se quiere tomar una decisión sobre la compra de un producto o servicio.
 * 60% de los consumidores interactúa con, al menos, una marca en las redes sociales.
 
-![captura1](captura1.png "captura1")
+
 ![captura22](captura22.png "captura22")
 
 
