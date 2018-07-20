@@ -61,3 +61,16 @@ Se menciona a continuación algunos datos estadisticos , donde se pone en eviden
 
 ![ima28](image/ima28.png "ima28")
 ![ima29](image/ima29.png "ima29")
+
+
+### Presentación de la encuesta
+
+https://docs.google.com/presentation/d/1TXodOMzJuyr6HXPFJmtdaHV36KRE1a4qwKhqLY6OO7o/edit?usp=sharing
+
+### Presentación de las respuestas de la encuesta.
+
+https://docs.google.com/presentation/d/1bvA3PgIcO_3R3SkSEXE7szeh8Ji-qYcewsWSwfL3nFA/edit?usp=sharing
+
+
+
+
