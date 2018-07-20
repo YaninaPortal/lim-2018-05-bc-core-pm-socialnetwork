@@ -31,7 +31,7 @@ Objetivos Específicos :
 
 Para conocer  y diseñar la experiencia de nuestros usuarios hicimos una encuesta en la que nos permitió recolectar valiosa información para la toma de decisiones en la creación y contenido de nuestra red social, información que reflejamos en nuestro sketch.
 
- ### Encuesta dirigida a nuestro público objetivo.
+ ## Encuesta dirigida a nuestro público objetivo.
 
  [Formulario de la encuesta](https://goo.gl/forms/nH6J44ktEB3EFJ2u1)
 
@@ -57,7 +57,7 @@ Con la encuesta se concluye que:
 
 * La mayoría de los encuestados manifiestan que le gustaría que en ésta red social se compartiera información que permita conocer mejor este movimiento feminista, que además se muestre los logros obtenidos por mujeres que muchas veces pasan de manera anónima, y éstas a su vez sean inspiración para quienes siguen esta red social.
 
-### Entrevista dirigida a nuestro público objetivo
+## Entrevista dirigida a nuestro público objetivo
 Esta entrevista tuvo como objetivo conocer que Lema representaba mejor al Feminismo.
 
  Frases propuestas:
