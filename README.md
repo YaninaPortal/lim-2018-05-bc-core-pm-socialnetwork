@@ -51,9 +51,13 @@ Se menciona a continuación algunos datos estadisticos , donde se pone en eviden
 ![ima23](image/ima23.png "ima23")
 ![ima24](image/ima24.png "ima24")
 ![ima25](image/ima25.png "ima25")
+
+9.-¿Qué funcionalidad debería tener esta red social para que represente al feminismo?
+
 ![ima26](image/ima26.png "ima26")
 ![ima27](image/ima27.png "ima27")
 
+10.-¿Qué funcionalidad le agregarias para que sea un agente diferenciador con respecto a otras redes sociales?
 
-
-
+![ima28](image/ima28.png "ima28")
+![ima29](image/ima29.png "ima29")
