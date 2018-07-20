@@ -1,75 +1,96 @@
-# Proyecto #3
+# Proyecto #3 
+# Red Social ¡Soy Feminista!
 
-## Colaboradoras :
+## Preámbulo
 
-Yenny Castillo
-Diana 
-Yanina Portal
+En la actualidad existen diferentes redes sociales como: Instagram, Snapchat, Twitter, Facebook, etc. que nos permite comunicarnos y entretenernos, convirtiéndolas así en un medio más fácil y rápido para compartir y recibir información a nivel global, llegando a crear niveles de dependencia en la vida del ser humano y en su ámbito social.
+Es así que las redes sociales toman un lugar predominante es nuestras vidas, ya que nos permite relacionar a todo nivel y puede ser utilizada por cualquier persona, inclusive las pequeñas y grandes empresas han aprovechado estos medios para llegar a nuevos clientes.
 
-##Social Network
+## Introducción
 
-Las redes sociales han venido a cambiar la forma como las personas nos comunicamos , permitiendo una comunicación más directa y rápida  a esto se le suma el costo mucho  menor de anunciarse comparado con las medios de comunicación tradicionales ,como son : la radio , la television , etc.
+Hoy en día la población relaciona al feminismo con la idea de que las mujeres se quiere igualar a los hombres y que es una corriente solo para mujeres, nada más alejado de la realidad, lo que nos demuestra que hay mucha desinformación a nivel general tanto en la población femenina como en la masculina. Es así que viendo esta necesidad de información y viendo la oportunidad  de comunicación que nos ofrecen las redes sociales surge la idea de crear una red social de feministas que nos permita informar a la población sobre esta corriente(feminismo) que no es exclusiva solo de mujeres si no que por el contrario también tiene entre sus miembros a muchos hombres que creen firmemente en el principio fundamental del Feminismo: "La Igualdad de Derechos".
 
-La principal función de las Redes Sociales es la de relacionar personas a través de las herramientas que ofrecen y todas comparten las mismas características : 
+ 
+## User Experience Design
 
-* Crear un perfil.
-* Compartir contenido.
-* Generar listas de contactos.
+### Definición del producto
+   
+¡Soy Feminista! es una Red Social dirigida a la población Feminista (mujeres y hombres) y a aquellas personas que necesiten informarse sobre esta corriente llamada "Feminismo", donde podrás compartir  información concerniente a esta corriente, compartir comentarios,  postear fotos, etc. 
+¡Soy Feminista! te permite conectarte con otras personas y se puede abrir en cualquier dispositivo web desde un celular hasta una laptop, lo que la hace de fácil acceso para nuestros usuarios.
 
-### Algunos datos estadisticos.
+## Objetivos
 
-Se menciona a continuación algunos datos estadisticos , donde se pone en evidencia su masivo uso.
+El objetivo principal de crear esta red social es cubrir la necesidad de información que existe en la población con respecto al Feminismo.
 
-* 84% de los usuarios de internet acceden a las redes sociales.
-* 27% del tiempo en internet lo utilizan en las redes sociales.
-* 74% de los usarios de redes sociales, piensan que éstas son un medio de confianza al que acudir cuando se quiere tomar una decisión sobre la compra de un producto o servicio.
-* 60% de los consumidores interactúa con, al menos, una marca en las redes sociales.
+Objetivos Específicos :
 
+* Crear una red social que sea de fácil acceso a nuestros usuarios.
+* Permitir a los usuarios registrarse a nuestra red social usando sus cuentas de otras redes (faceboock, google, etc.)
+* Permitir a los usuarios postear, subir fotos, agregar publicaciones.
+* Permitir a los usuarios agregar, editar y eliminar contenido de la red social.
 
-![ima1](image/ima1.png "ima1")
-![ima2](image/ima2.png "ima2")
-![ima3](image/ima3.png "ima3")
-![ima4](image/ima4.png "ima4")
-![ima5](image/ima5.png "ima5")
-![ima6](image/ima6.png "ima6")
-![ima7](image/ima7.png "ima7")
-![ima8](image/ima8.png "ima8")
-![ima9](image/ima9.png "ima9")
-![ima10](image/ima10.png "ima10")
-![ima11](image/ima11.png "ima11")
-![ima12](image/ima12.png "ima12")
-![ima13](image/ima13.png "ima13")
-![ima14](image/ima14.png "ima14")
-![ima15](image/ima15.png "ima15")
-![ima16](image/ima16.png "ima16")
-![ima17](image/ima17.png "ima17")
-![ima18](image/ima18.png "ima18")
-![ima19](image/ima19.png "ima19")
-![ima20](image/ima20.png "ima20")
-![ima21](image/ima21.png "ima21")
-![ima22](image/ima22.png "ima22")
-![ima23](image/ima23.png "ima23")
-![ima24](image/ima24.png "ima24")
-![ima25](image/ima25.png "ima25")
+Para conocer  y diseñar la experiencia de nuestros usuarios hicimos una encuesta en la que nos permitió recolectar valiosa información para la toma de decisiones en la creación y contenido de nuestra red social, información que reflejamos en nuestro sketch.
 
-9.-¿Qué funcionalidad debería tener esta red social para que represente al feminismo?
+ ### Encuesta dirigida a nuestro público objetivo.
 
-![ima26](image/ima26.png "ima26")
-![ima27](image/ima27.png "ima27")
-
-10.-¿Qué funcionalidad le agregarias para que sea un agente diferenciador con respecto a otras redes sociales?
-
-![ima28](image/ima28.png "ima28")
-![ima29](image/ima29.png "ima29")
-
-
-### Presentación de la encuesta
+https://goo.gl/forms/nH6J44ktEB3EFJ2u1
 
 https://docs.google.com/presentation/d/1TXodOMzJuyr6HXPFJmtdaHV36KRE1a4qwKhqLY6OO7o/edit?usp=sharing
 
-### Presentación de las respuestas de la encuesta.
+ Con la encuesta se concluye que:
 
 https://docs.google.com/presentation/d/1bvA3PgIcO_3R3SkSEXE7szeh8Ji-qYcewsWSwfL3nFA/edit?usp=sharing
+
+* La mayoría de las personas que usan redes sociales es del sexo femenino.
+
+* Del 100% de mujeres encuestadas, el 30% no conoce el significado de feminismo y tampoco se considera feminista.
+
+* Del 100% de hombres encuestados el 80% no conoce el significado de Feminismo y ven al feminismo como  una amenaza.
+
+* Del 100% de encuestados el 71% considera que el Feminismo es  una corriente exclusiva de las mujeres.
+
+* Del 100% de encuestados el 71% considera que debería de existir una red social que trate el tema del Feminismo.
+
+* La mayoría de los encuestados manifiestan que le gustaría que en ésta red social se compartiera información que permita conocer mejor este movimiento feminista, que además se muestre los logros obtenidos por mujeres que muchas veces pasan de manera anónima, y éstas a su vez sean inspiración para quienes siguen esta red social.
+
+### Entrevista dirigida a nuestro público objetivo
+Esta entrevista tuvo como objetivo conocer que Lema representaba mejor al Feminismo.
+
+ Frases propuestas:
+
+1.- Cuando todos seamos iguales todos seremos más libres.
+
+2.- No queremos poder sobre los hombres sino sobre nosotras mismas.
+
+ 3.-No estoy aceptando las cosas que puedo cambiar, estoy cambiando las cosas que no       puedo aceptar.
+
+ 4.-No buscamos la igualdad, buscamos la liberación de la mujer, la igualdad es la consecuencia de ello.
+
+ 5.-Cuando estamos en silencio somos una y cuando hablamos somos todas.
+
+ 6.- El futuro es Femenino.
+
+Total de entrevistados: 45 personas.
+
+ Con la entrevista se concluye que:
+
+ * El 47 % considera que la frase n° 1 representa mejor esta corriente, concluyendo la mayoría que esta frase es inclusiva pues se extiende y acoge  a todos los géneros.
+
+* El 16% considera que las frases n° 3 y n° 5 representa mejor esta corriente.
+
+## Prototipo de Alta Fidelidad
+
+## Figma
+
+![nuevo1](image/nuevo1.png "nuevo1")
+![nuevo2](image/nuevo2.png "nuevo2")
+
+## Marvel
+
+https://marvelapp.com/32i460c
+
+
+
 
 
 
