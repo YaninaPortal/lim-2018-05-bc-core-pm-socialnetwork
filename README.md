@@ -33,13 +33,17 @@ Para conocer  y diseñar la experiencia de nuestros usuarios hicimos una encuest
 
  ### Encuesta dirigida a nuestro público objetivo.
 
-https://goo.gl/forms/nH6J44ktEB3EFJ2u1
+ [Formulario de la encuesta](https://goo.gl/forms/nH6J44ktEB3EFJ2u1)
 
-https://docs.google.com/presentation/d/1TXodOMzJuyr6HXPFJmtdaHV36KRE1a4qwKhqLY6OO7o/edit?usp=sharing
 
- Con la encuesta se concluye que:
+[Diapositivas de la encuesta](https://docs.google.com/presentation/d/1TXodOMzJuyr6HXPFJmtdaHV36KRE1a4qwKhqLY6OO7o/edit?usp=sharing)
 
-https://docs.google.com/presentation/d/1bvA3PgIcO_3R3SkSEXE7szeh8Ji-qYcewsWSwfL3nFA/edit?usp=sharing
+
+Con la encuesta se concluye que:
+
+[Respuestas de la encuesta](https://docs.google.com/presentation/d/1bvA3PgIcO_3R3SkSEXE7szeh8Ji-qYcewsWSwfL3nFA/edit?usp=sharing)
+
+
 
 * La mayoría de las personas que usan redes sociales es del sexo femenino.
 
@@ -85,10 +89,10 @@ Total de entrevistados: 45 personas.
 ![nuevo1](image/nuevo1.png "nuevo1")
 ![nuevo2](image/nuevo2.png "nuevo2")
 
+
 ## Marvel
 
-https://marvelapp.com/32i460c
-
+[Prototipo de Alta Fidelidad](https://marvelapp.com/32i460c)
 
 
 
