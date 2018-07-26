@@ -32,3 +32,36 @@
     max-width: 400px;
     font-family: Arial, Helvetica, sans-serif;   
 }
+
+.valid{
+    border-color: green;
+    background-color: rgb(243, 247, 243);
+
+}
+  
+
+.invalid{
+    border-color: #900;
+    background-color: #FDD;
+
+}
+  
+input:focus .invalid {
+    outline: none;
+}
+  
+.error {
+    width  : 100%;
+    padding: 0;
+   
+    font-size: 80%;
+    color: rgb(161, 32, 32);
+    
+   
+    
+    box-sizing: border-box;
+}
+  
+.error.active {
+    padding: 0.3em;
+}
