@@ -9,39 +9,58 @@
     <title>Social network</title>
  </head>
  <body>
-    <div id="login">
-      <button type="button" id="btnLogout" value="Logout">logout</button>
-      <div id="name"></div>
+   <div id="login">
+     <button type="button" id="btnLogout" value="Logout">logout</button>
+     <div id="contenido"></div>
    </div>
    <div id="logout" class="hiden initial">
-      <label for="email">Email</label>
-      <input id="email" type="email" placeholder="email" required><br>
-      <label for="password" >Password</label>
-      <input id="password" type="password" placeholder="password" required><br>
-      <button id="btnregister" type="button" value="Registrate">Registrate</button>
-      <button id="btnsignin" type="button" value="btnLogin">Login</button><br>
-      <button id="facebook" class="spin" type="button">continue with facebook</button><br>
-      <button id="google" class="spine" type="button">continue with google</button>
-    </div>
+     <label for="mail">Email</label>
+     <input id="mail" type="email" placeholder="email" required><br>
+     <label for="pass" >Password</label>
+     <input id="pass" type="password" placeholder="password" required><br>
+     <a  href="#" id="showRegister" value="Registrate">Registrate</a>
+     <button id="btnsignin" type="button" value="btnLogin">Login</button><br>
+     <button id="facebook" class="spin" type="button">continue with facebook</button><br>
+     <button id="google" class="spine" type="button">continue with google</button>
+   </div>
+   <div id="registrate" class="initial">
+     <label for="name">Nombre</label>
+     <input id="username" type="text" placeholder="username" required><br>
+     <label for="email">
+       <span>Email</span> 
+       <input id="email" type="email" class="email" placeholder="email" required>
+       <span class="error" ></span>
+     </label><br>
+     <label for="password" >Contraseña</label>
+     <input id="password" type="password" placeholder="Contraseña" required><br>
+     <label for="confirmPassword" >
+       <span>Confirma tu contraseña</span> 
+       <input id="confirmPassword" class="confirmPassword" type="password" placeholder="Confirma tu contraseña" required><br>
+       <span class="err" ></span>
+     </label><br>
+     <button id="btnregister" type="button">Aceptar</button>
+   </div>
+   <div id="bd" class="hiden">
+     <textarea name="publication" id="post" cols="30" rows="10"></textarea>
+     <button type="button" value="publicar" id="btnSave" >Publicar</button>
+   </div>
+   <div id="posted" class="hiden">
+     <h3>Publicaciones</h3>
+   </div>
    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBDC5jCsH9YilLHYSnbV_rHdV--wCd__GM",
-    authDomain: "feminismo-d7df2.firebaseapp.com",
-    databaseURL: "https://feminismo-d7df2.firebaseio.com",
-    projectId: "feminismo-d7df2",
-    storageBucket: "feminismo-d7df2.appspot.com",
-    messagingSenderId: "992535526426"
-  };
-  firebase.initializeApp(config);
-</script>
-
-
-<script src="app.js"></script>
-<!--<script src="index.js"></script>-->
-
-
-
-</body>
+   <script>
+     // Initialize Firebase
+     var config = {
+       apiKey: "AIzaSyBDC5jCsH9YilLHYSnbV_rHdV--wCd__GM",
+       authDomain: "feminismo-d7df2.firebaseapp.com",
+       databaseURL: "https://feminismo-d7df2.firebaseio.com",
+       projectId: "feminismo-d7df2",
+       storageBucket: "feminismo-d7df2.appspot.com",
+       messagingSenderId: "992535526426"
+      };
+     firebase.initializeApp(config);
+   </script>
+   <script src="app.js"></script>
+   <!--<script src="index.js"></script>-->
+ </body>
 </html>
