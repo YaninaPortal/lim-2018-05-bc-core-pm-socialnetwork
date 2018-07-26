@@ -96,6 +96,111 @@ Total de entrevistados: 45 personas.
 
 
 
+### BENCHMARK DE LAS PRINCIPALES REDES SOCIALES.
+
+Considerando que las redes sociales nos permiten llegar a cualquier parte del mundo y por tanto teniendo como objetivo principal la creación de una red social intentamos analizar a nuestra competencia no solo a nivel local si no también a nivel global que nos permita tener una visión clara de como direccionara nuestra red social.
+
+##COMPETENCIA DIRECTA
+
+##Redes sociales a nivel Global
+
+#Time's Up Now
+Esta cuenta de Instagram tiene su origen en en el movimiento homónimo creado en 2006 para luchar contra el abuso sexual contra las mujeres. A día de hoy ha vuelto a ganar importancia debido, entre otras noticias, al apoyo de actrices como Jennifer Lawrence, Reese Whiterspoon, Cate Blanchett o Emma Stone, que han firmado el manifiesto para luchar también contra la desigualdad de la mujer.
+
+#Global Fund Women
+Esta cuenta de Instagram pertenece a una organización del mismo nombre que invierte su tiempo y sus fondos en los movimientos de las mujeres. Apoyan a todas las personas que se involucran de una manera activa en los grupos feministas. Su filosofía es clara: "Las mujeres son las mejores agentes en sus comunidades locales y hay que darles recursos y voz para que puedan cambiar el mundo".
+
+#Makers
+Lanzada en 2012, esta plataforma trata de entrevistar a todas aquellas mujeres pioneras de hoy y de mañana, según explican en su web. Hasta hoy han producido más de 4.500 vídeos a través de sus 400 productores. Entre los vídeos más destacados destacan los realizados a figuras del feminismo como Lena Dunham, Oprah Winfrey, Shonda Rhimes o, a pioneras como la primera árbitro de la NBA o Violet Palmer, la primera corredora de la Maratón de Boston.
+
+##Redes sociales a nivel Local
+
+#Movimiento Feminista Del Perú.
+ Es una plataforma dirigida a todo público sin distinción de género.
+ **Seguidores: 8002
+** Plataforma de exposición: Facebook
+**Publico objetivo: Todos sin distinción de género.
+
+#Comando Feminista 
+Es un espacio de articulación de colectivas feministas jóvenes para la rebeldía contrasexual y anti patriarcal 
+**Seguidores: 3589
+** Plataforma de exposición: Facebook
+**Publico objetivo: Mujeres
+
+#Las Respondonas
+ Es una plataforma virtual que nace con la intención de darle voz a las mujeres.
+**Seguidores: 10665
+** Plataforma de exposición: Facebook
+**Publico objetivo: Mujeres
+
+#Ni Una Menos Perú
+Tocan a una tocan a todas. es una consigna que dio nombre a un movimiento feminista y un colectivo de protesta contra la violencia hacia las mujeres y su consecuencia más grave y visible.
+**Seguidores: 161570
+** Plataforma de exposición: Facebook
+**Publico objetivo: Mujeres
+
+##COMPETENCIA INDIRECTA
+
+Facebook
+Twitter
+Snapchat
+
+##CONCLUSIONES DEL BENCHMARK 
+Actualmente existen muchos movimientos que tiene como bandera al Feminismo y todos nacieron con la finalidad de ser un medio de información, usando como medio a las diferentes redes sociales existentes, siendo la más usada Facebook y Twitter, teniendo como público objetivo en su mayoría solo al sexo femenino.
+
+Con esta información podemos concluir:
+ 1.- No existe una Red Social que toque el tema del Feminismo,
+2.- Los Movimientos Feministas al usar plataformas como Facebook y twiter limitan su funcionalidad.
+3.- Al ser la primera red social Feminista serviremos de plataforma para todxs estxs movimientos.
+4.- Seremos una red social que considere a todxs los géneros como su público objetivo, tomando esto en cuenta para el diseño de nuestra red social.
+
+
+##ENTREVISTA
+
+HOLA ………………………………………….. BUENAS TARDES.
+(ROMPER EL HIELO)
+QUISIERA CONOCER TUS OPINIONES SOBRE EL FEMINISMO
+EMPECEMOS.
+1.- CUENTAME QUE SABES DEL FEMINISMO       
+2.- CREES QUE ESTA CORRIENTE ES EXCLUSIVA DE UN GENERO, POR QUE  ?
+3.- CREES QUE ES NECESARIO DIFUNDIR ESTA CORRIENTE, POR QUE
+COMO LA DIFUNDIRIAS.
+4.-CONOCES ALGUNA RED SOCIAL O UN BLOG QUE TOQUE ESTE TEMA
+5.- SI EXISTIERA UNA RED SOCIAL QUE TENGA COMO BANDERA EL FEMINISMO 
+** QUE CONTENIDO TE GUSTARIA QUE TENGA
+** CUANDO UTILIZATRIAS LA RED
+** QUE TE GUSTARIA QUE TE PERMITA HACER ESTA RED SOCIAL
+** QUE TE FRUSTARIA AL USAR ESTA RED SOCIAL
+** QUE BENEFICIO CREES QUE TE APORTARIA EN TU VIDA  Y EN LA SOCIEDAD
+RECOMENDACIONES PARA EL USO DE ESTA RED SOCIAL.
+
+##CONCLUSIONES
+Nuestrxs entrevistadxs manifestaron:
+** Que existen redes sociales que les permiten comunicarse a nivel global, pero aún no existe una Red Social que tome al Feminismo como bandera.
+** Consideran que sería ideal que existiera una Red Social Feminista que agrupe a todos los movimientos Feministas en una sola red.
+**Que les gustaría que esta red Social sea inclusiva y agrupe a personas de todos los géneros , no solo de manera implícita sino de una manera explícita.
+** Que esta Red Social sea un medio informativo para la población donde se comparta información relevante de esta corriente para cubrir esa gran brecha de desinformación existente en la actualidad, además que esta información contenga los links que los redireccione a la fuente de origen de la información compartida.  
+**
+** Que esta Red Social les permita:
+•	Hacer y eliminar publicaciones
+•	Postear
+•	Chatear
+•	Subir fotos
+•	Tener notificaciones de eventos específicos.
+** Que esta Red Social comparta el contenido sgte:
+•	Historia sobre el Feminismo.
+•	Vocabulario Feminista (terminología general)
+•	Historias de mujeres que trascendieron en el tiempo, que sirvan de inspiración.
+•	Eventos, marchas, reuniones de activismo.
+•	Noticias, artículos, testimonios, etc.
+
+##TEST DE PROTOTIPOS DE LA RED SOCIAL.
+
+Maquetas………….
+
+Se testearon 3 prototipos con los usuarios, recibiendo diferentes feedback tanto en los colores como la distribución de las imágenes y tomando las recomendaciones hechas por nuestros usuarios concluimos en el siguiente prototipo.
+
+#Prototipo Final
 
 
 
