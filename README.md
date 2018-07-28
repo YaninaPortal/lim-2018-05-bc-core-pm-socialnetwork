@@ -287,7 +287,7 @@ Con esta información podemos concluir:
 
 3.- Al ser la primera red social Feminista serviremos de plataforma para todxs estxs movimientos.
 
-4.- Seremos una red social que considere a todxs los géneros como su público objetivo, tomando esto en cuenta para el diseño de nuestra red social.
+4.- Seremos la primera red social que considere a todxs los géneros como su público objetivo, tomando esto en cuenta para el diseño de nuestra red social.
 
   
 ## ENTREVISTA
