@@ -269,7 +269,7 @@ Tocan a una tocan a todas, es una consigna que dio nombre a un movimiento femini
 
 ## COMPETENCIA INDIRECTA
 
-  ![yani](image/yani.JPG  "yani")
+  ![nuevo3](image/nuevo3.JPG  "nuevo3")
 
   
 
@@ -344,17 +344,42 @@ Nuestrxs entrevistadxs manifestaron:
   ## TEST DE PROTOTIPOS DE LA RED SOCIAL.
 
   
- Se presentaron  3 prototipos a los entrevistadxs .
+ Se presentaron  3 prototipos a lxs entrevistadxs .
+
+ ## PROTOTIPO #1 
+
+ ![1](image/1.png  "1")
+
+ ![2](image/2.png  "2")
 
 
-[Prototipo 1](https://marvelapp.com/998b2hb)
+[Link del Prototipo 1](https://marvelapp.com/4168a4a)
 
-[Prototipo 2](https://marvelapp.com/32i460c)
+ ## PROTOTIPO #2
 
-[Prototipo 3](https://marvelapp.com/413539a)
+ ![3](image/3.png  "3")
+
+ ![4](image/4.png  "4")
+
+
+[Link del Prototipo 2](https://marvelapp.com/32i460c)
+
+ ## PROTOTIPO #3
+
+![5](image/5.png  "5")
+
+![6](image/6.png  "6")
+
+![7](image/7.png  "7")
+
+
+[Link del Prototipo 3](https://marvelapp.com/413539a)
 
 
  Recibiendo diferentes feedback tanto en los colores como la distribución de las imágenes y tomando las recomendaciones hechas por nuestros usuarios concluimos en el siguiente prototipo.
 
   
 [Prototipo ](https://marvelapp.com/413ca53)
+
+
+
