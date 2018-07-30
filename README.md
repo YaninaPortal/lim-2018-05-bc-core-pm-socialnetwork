@@ -64,26 +64,14 @@ Para conocer y diseñar la experiencia de nuestros usuarios hicimos una encuesta
 
 ## Encuesta dirigida a nuestro público objetivo.
 
-  
+Formulario de la encuesta :
 
-[Formulario de la encuesta](https://goo.gl/forms/nH6J44ktEB3EFJ2u1)
+![](https://image.ibb.co/ht839T/pregunta.png)
 
-  
-  
-
-[Diapositivas de la encuesta](https://docs.google.com/presentation/d/1TXodOMzJuyr6HXPFJmtdaHV36KRE1a4qwKhqLY6OO7o/edit?usp=sharing)
+![](https://image.ibb.co/joGtb8/Respuesta.png)
 
   
-  
-
 Con la encuesta se concluye que:
-
-  
-
-[Respuestas de la encuesta](https://docs.google.com/presentation/d/1bvA3PgIcO_3R3SkSEXE7szeh8Ji-qYcewsWSwfL3nFA/edit?usp=sharing)
-
-  
-  
   
 
 * La mayoría de las personas que usan redes sociales es del sexo femenino.
@@ -295,13 +283,21 @@ Con esta información podemos concluir:
  Preguntas formuladas en la entrevista :
 
 > 1.- Cuéntame que sabes sobre el feminismo.
+
 > 2.-¿Crees que esta corriente es exclusiva de un genero?.
+
 > 3.- ¿Porqué? 
+
 > 4.- ¿Crees  que es necesario difundir esta corriente ? 
+
 > 5.-¿Porqué?
+
 > 6.-¿Cómo lo difundirías?
+
 > 7.-¿Conoces alguna red social o un blog que toque este tema?.
+
 > 8.-¿Cómo lo descubriste o como llegaste a ella?
+
 > 9.- Si existiera una red social que tenga como bandera el feminismo  :
 > * ¿Qué  contenido te gustaría que tenga?
 > * ¿Cuando  utilizarías la red?
@@ -309,6 +305,7 @@ Con esta información podemos concluir:
 > * ¿Qué te frustraría al usar esta red social?
 > * ¿Qué beneficio crees que aportaría a tu vida y a la sociedad ?
 > 
+
 > 10.-Recomendaciones para el uso de esta red social.
 
   
@@ -346,7 +343,7 @@ Nuestrxs entrevistadxs manifestaron:
   
  Se presentaron  3 prototipos a lxs entrevistadxs .
 
- ## PROTOTIPO #1 
+ ## Prototipo #1 
 
  ![1](image/1.png  "1")
 
@@ -355,7 +352,7 @@ Nuestrxs entrevistadxs manifestaron:
 
 [Link del Prototipo 1](https://marvelapp.com/4168a4a)
 
- ## PROTOTIPO #2
+ ## Prototipo #2
 
  ![3](image/3.png  "3")
 
@@ -364,7 +361,7 @@ Nuestrxs entrevistadxs manifestaron:
 
 [Link del Prototipo 2](https://marvelapp.com/32i460c)
 
- ## PROTOTIPO #3
+ ## Prototipo #3
 
 ![5](image/5.png  "5")
 
@@ -378,8 +375,20 @@ Nuestrxs entrevistadxs manifestaron:
 
  Recibiendo diferentes feedback tanto en los colores como la distribución de las imágenes y tomando las recomendaciones hechas por nuestros usuarios concluimos en el siguiente prototipo.
 
-  
-[Prototipo ](https://marvelapp.com/413ca53)
+   ## Prototipo Elegido
+
+ ![8](image/8.png  "8")
+
+ ![9](image/9.png  "9")
+
+ ![10](image/10.png  "10")  
+
+
+[Link del Prototipo Elegido](https://marvelapp.com/413ca53)
+
+
+
+
 
 
 
