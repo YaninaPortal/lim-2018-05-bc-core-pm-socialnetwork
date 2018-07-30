@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    
     <title>Social network</title>
- </head>
- <body>
-   <div id="login">
-     <button type="button" id="btnLogout" value="Logout">logout</button>
-     <div id="contenido"></div>
-   </div>
-   <div id="logout" class="hiden initial">
+</head>
+<body>
+    <div class="initial">
      <label for="mail">Email</label>
      <input id="mail" type="email" placeholder="email" required><br>
      <label for="pass" >Password</label>
@@ -22,31 +17,8 @@
      <button id="btnsignin" type="button" value="btnLogin">Login</button><br>
      <button id="facebook" class="spin" type="button">continue with facebook</button><br>
      <button id="google" class="spine" type="button">continue with google</button>
-   </div>
-   <div id="registrate" class="initial">
-     <label for="name">Nombre</label>
-     <input id="username" type="text" placeholder="username" required><br>
-     <label for="email">
-       <span>Email</span> 
-       <input id="email" type="email" class="email" placeholder="email" required>
-       <span class="error" ></span>
-     </label><br>
-     <label for="password" >Contraseña</label>
-     <input id="password" type="password" placeholder="Contraseña" required><br>
-     <label for="confirmPassword" >
-       <span>Confirma tu contraseña</span> 
-       <input id="confirmPassword" class="confirmPassword" type="password" placeholder="Confirma tu contraseña" required><br>
-       <span class="err" ></span>
-     </label><br>
-     <button id="btnregister" type="button">Aceptar</button>
-   </div>
-   <div id="bd" class="hiden">
-     <textarea name="publication" id="post" cols="30" rows="10"></textarea>
-     <button type="button" value="publicar" id="btnSave" >Publicar</button>
-   </div>
-   <div id="posted" class="hiden">
-     <h3>Publicaciones</h3>
-   </div>
+    </div>
+
    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
    <script>
      // Initialize Firebase
@@ -59,8 +31,12 @@
        messagingSenderId: "992535526426"
       };
      firebase.initializeApp(config);
+      // Get a reference to the database service
+      var database = firebase.database();
    </script>
-   <script src="app.js"></script>
+   <script src="network.js"></script>
+    
+   <script src="login.js"></script>
    <!--<script src="index.js"></script>-->
  </body>
 </html>
