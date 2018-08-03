@@ -15,7 +15,7 @@ window.onload = ( ) =>{
             
             console.log('Inicio Logueado');
             
-            console.log(user.uid);
+            //console.log(user.uid);
 
             if(user.displayName!=null){
                 var fire=firebase.database().ref().child('users');
@@ -27,6 +27,23 @@ window.onload = ( ) =>{
                 <h2>Hola  ${data.val()[user.uid].username}</h2>
                 <p>${data.val()[user.uid].email}</p>
                 </div>`;
+               })
+               var fire=firebase.database().ref().child('user-posts');
+                fire.on ('value',function(data){
+
+                    let dataUserPosts=data;
+                    let objkeypostBody=Object.keys(dataUserPosts.val()[user.uid]);
+                    //console.log(objkeypostBody);
+                    let allPostKeys=Object.keys(dataUserPosts);
+                    objkeypostBody.forEach(keyPost=>{
+                        //console.log(keyPost)
+                        let body=dataUserPosts.val()[user.uid][keyPost].body;
+                        //console.log(body);
+                        showPublications(body,user.uid,keyPost);
+                    });
+                    
+                    
+                
                })
 
             }else {
@@ -40,6 +57,24 @@ window.onload = ( ) =>{
                 <h2>Hola  ${data.val()[user.uid].username}</h2>
                 <p>${data.val()[user.uid].email}</p>
                 </div>`;
+               })
+               
+               var fire=firebase.database().ref().child('user-posts');
+                fire.on ('value',function(data){
+
+                    let dataUserPosts=data;
+                    let objkeypostBody=Object.keys(dataUserPosts.val()[user.uid]);
+                    //console.log(objkeypostBody);
+                    let allPostKeys=Object.keys(dataUserPosts);
+                    objkeypostBody.forEach(keyPost=>{
+                        //console.log(keyPost)
+                        let body=dataUserPosts.val()[user.uid][keyPost].body;
+                        //console.log(body);
+                        showPublications(body,user.uid,keyPost);
+                    });
+                    
+                    
+                
                })
             }
             
@@ -63,58 +98,110 @@ btnLogout.addEventListener('click',()=>{
     });
 });
 
+
 btnSave.addEventListener('click',()=>{
     let userId=firebase.auth().currentUser.uid;
     const newPost=writeNewPost(userId,post.value);
-
-    let btnEdit =document.createElement('input');
-    btnEdit.setAttribute('value','Editar');
-    btnEdit.setAttribute('type','button');
-    let btnDelete=document.createElement('input');
-    btnDelete.setAttribute('value','Eliminar');
-    btnDelete.setAttribute('type','button');
-    let contentPosted=document.createElement('div');
-    let textPosted=document.createElement('textarea');
-    textPosted.setAttribute('id',newPost);
-    
-    textPosted.innerHTML=post.value;
-    
-  btnDelete.addEventListener('click', () => {
-
-    firebase.database().ref().child('/user-posts/' + userId + '/' + newPost).remove();
-    firebase.database().ref().child('posts/' + newPost).remove();
-
-    while(posted.firstChild) posted.removeChild(posted.firstChild);
-
-    
     reload_page();
-
-  });
-
-  btnEdit.addEventListener('click', () => {
-    const newUpdate = document.getElementById(newPost);
-    const nuevoPost = {
-      body: newUpdate.value,
-    };
-
-    var updatesUser = {};
-    var updatesPost = {};
-
-    updatesUser['/user-posts/' + userId + '/' + newPost] = nuevoPost;
-    updatesPost['/posts/' + newPost ] = nuevoPost;
-
-    firebase.database().ref().update(updatesUser);
-    firebase.database().ref().update(updatesPost);
-    
-  });
-  contentPosted.appendChild(textPosted);
-  contentPosted.appendChild(btnEdit);
-  contentPosted.appendChild(btnDelete);
-  posted.appendChild(contentPosted);
 })
+function showPublications(postContent,userId,keyPost){ 
+    let publications = document.createElement('div'); 
 
+    let sectionPost = document.createElement('textarea'); 
+    sectionPost.setAttribute('id', keyPost); 
+    sectionPost.textContent = postContent; 
 
+    let sectionLike = document.createElement('div'); 
+    let pLike=document.createElement('span'); 
+    pLike.setAttribute('id', `likecount${keyPost}`);
 
-function reload_page (){
-    window.location.reload();
+    let btnLike= document.createElement('input'); 
+    btnLike.setAttribute('id', `like${keyPost}`); 
+    //btnLike.setAttribute('class','falta clase'); 
+    btnLike.setAttribute('value','Me gusta'); 
+    btnLike.setAttribute('type','button'); 
+
+    let sectionButtons = document.createElement('div');
+
+    let btnEdit = document.createElement('input'); 
+    btnEdit.setAttribute('id', `edit${keyPost}`); 
+    //btnEdit.setAttribute('class','falta clase'); 
+    btnEdit.setAttribute('value','Editar'); 
+    btnEdit.setAttribute('type','button'); 
+
+    let btnDelete = document.createElement('input'); 
+    btnDelete.setAttribute('id', `delet${keyPost}`); 
+    //btnDelete.setAttribute('class','falta clase'); 
+    btnDelete.setAttribute('value','Eliminar'); 
+    btnDelete.setAttribute('type','button'); 
+
+    sectionLike.appendChild(btnLike); 
+    sectionLike.appendChild(pLike); 
+    sectionButtons.appendChild(btnDelete); 
+    sectionButtons.appendChild(btnEdit); 
+    posted.appendChild(publications); 
+    publications.appendChild(sectionPost); 
+    publications.appendChild(sectionLike); 
+    publications.appendChild(sectionButtons);
+
+    let likePoints = document.querySelector(`#likecount${keyPost}`); 
+
+    let likes = document.querySelector(`#like${keyPost}`); 
+    likes.addEventListener('click', () => { 
+        let userId = firebase.auth().currentUser.uid; 
+        //const currentPost = document.getElementById(`like${keyPost}`); 
+        const likeButton = likes.querySelector('.like-button'); 
+        firebase.database().ref('posts/' + keyPost) 
+        .once('value', (postRef) =>{ 
+            const postLike = postRef.val(); 
+
+            const objRefLike = postLike.postWithLikes || []; 
+
+            likePoints.innerHTML=objRefLike.length; 
+            if (objRefLike.indexOf(userId) === -1) { 
+                objRefLike.push(userId); 
+                postLike.likeCount = objRefLike.length; 
+            } else if (objRefLike.indexOf(userId) === 0) { 
+                likeButton.disabled = false; 
+            }
+            postLike.postWithLikes = objRefLike; 
+
+            let updates = {}; 
+            updates['/posts/' + keyPost] = postLike; 
+            updates['/user-posts/' + userId + '/' + keyPost] = postLike; 
+            return firebase.database().ref().update(updates); 
+        }) 
+    });
+
+    let delet = document.querySelector(`#delet${keyPost}`);
+    delet.addEventListener('click', () => {
+        firebase.database().ref().child('/user-posts/' + userId + '/' + keyPost).remove();
+        firebase.database().ref().child('posts/' + keyPost).remove();
+   
+        while(posted.firstChild) posted.removeChild(posted.firstChild);
+        reload_page()
+    });
+
+    let edit = document.querySelector(`#edit${keyPost}`);
+    edit.addEventListener('click', () => {
+        const editPost = document.getElementById(keyPost);
+      const nuevoPost = {
+          body: editPost.value,
+        };
+
+       var updatesUser = {};
+       var updatesPost = {};
+
+      updatesUser['/user-posts/' + userId + '/' + keyPost] = nuevoPost;
+      updatesPost['/posts/' + keyPost ] = nuevoPost;
+
+      firebase.database().ref().update(updatesUser);
+      firebase.database().ref().update(updatesPost);
+    });
+        
+    
 }
+   
+function reload_page() {
+    window.location.reload();
+}; 
