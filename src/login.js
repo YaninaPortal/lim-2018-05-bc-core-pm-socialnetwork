@@ -4,7 +4,7 @@ const  btnsignin = document.getElementById('btnsignin');
 const showRegister=document.getElementById('showRegister');
 const facebook =document.getElementById('facebook');
 const google =document.getElementById('google');
-
+const error = document.querySelector('.error');
 window.onload = ( ) =>{
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -26,6 +26,35 @@ window.onload = ( ) =>{
 showRegister.addEventListener('click',()=>{
     window.location.href = 'register.html';    
 });
+
+
+mail.addEventListener('keyup',()=>{
+    let exReg =/^[a-zA-Z0-9.#$%&*+_~-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-]*$/;
+   // let test = mail.value.length === 0 || exReg.test(mail.value);
+   let test = exReg.test(mail.value);
+   if (test) {
+     mail.classList.add("valid");
+     error.innerHTML = " ";
+     mail.classList.remove("invalid");
+     error.classList.remove("error");
+     error.classList.remove("erroractive");
+     
+     
+   } else if(mail.value.length === 0){
+     mail.classList.remove("valid");
+     error.classList.add("error");
+     mail.classList.add("invalid");
+     error.innerHTML = "ingresa email";
+     error.classList.add("erroractive");
+   }else{
+    mail.classList.remove("valid");
+    error.classList.add("error");
+    mail.classList.add("invalid");
+    error.innerHTML = "email incorrecto";
+    error.classList.add("erroractive");
+   }
+});
+
 
 btnsignin.addEventListener('click',()=> {
     
