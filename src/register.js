@@ -9,7 +9,8 @@ const err = document.querySelector('.err');
 
 email.addEventListener('keyup',()=>{
   let exReg =/^[a-zA-Z0-9.#$%&*+_~-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-]*$/;
-  let test = email.value.length === 0 || exReg.test(email.value);
+ // let test = email.value.length === 0 || exReg.test(email.value);
+ let test = exReg.test(email.value);
  if (test) {
    email.classList.add("valid");
    error.innerHTML = " ";
@@ -18,12 +19,18 @@ email.addEventListener('keyup',()=>{
    error.classList.remove("erroractive");
    
    
- } else {
+ } else if(email.value.length === 0){
    email.classList.remove("valid");
    error.classList.add("error");
    email.classList.add("invalid");
-   error.innerHTML = "email incorrecto";
+   error.innerHTML = "ingresa email";
    error.classList.add("erroractive");
+ }else{
+  email.classList.remove("valid");
+  error.classList.add("error");
+  email.classList.add("invalid");
+  error.innerHTML = "email incorrecto";
+  error.classList.add("erroractive");
  }
 });
 

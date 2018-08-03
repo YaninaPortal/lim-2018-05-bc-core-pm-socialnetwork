@@ -29,22 +29,19 @@ window.onload = ( ) =>{
                 </div>`;
                })
                var fire=firebase.database().ref().child('user-posts');
-                fire.on ('value',function(data){
+                fire.once ('value',function(data){
 
                     let dataUserPosts=data;
-                    let objkeypostBody=Object.keys(dataUserPosts.val()[user.uid]);
-                    //console.log(objkeypostBody);
-                    let allPostKeys=Object.keys(dataUserPosts);
-                    objkeypostBody.forEach(keyPost=>{
+                    let arrkeypost=Object.keys(dataUserPosts.val()[user.uid]);
+                    //console.log(arrkeypost);
+                    
+                    arrkeypost.forEach(keyPost=>{
                         //console.log(keyPost)
                         let body=dataUserPosts.val()[user.uid][keyPost].body;
                         //console.log(body);
                         showPublications(body,user.uid,keyPost);
                     });
-                    
-                    
-                
-               })
+                })
 
             }else {
                 
@@ -60,22 +57,19 @@ window.onload = ( ) =>{
                })
                
                var fire=firebase.database().ref().child('user-posts');
-                fire.on ('value',function(data){
+                fire.once ('value',function(data){
 
                     let dataUserPosts=data;
-                    let objkeypostBody=Object.keys(dataUserPosts.val()[user.uid]);
-                    //console.log(objkeypostBody);
-                    let allPostKeys=Object.keys(dataUserPosts);
-                    objkeypostBody.forEach(keyPost=>{
+                    let arrkeypost=Object.keys(dataUserPosts.val()[user.uid]);
+                   // console.log(arrkeypost);
+                    
+                    arrkeypost.forEach(keyPost=>{
                         //console.log(keyPost)
                         let body=dataUserPosts.val()[user.uid][keyPost].body;
                         //console.log(body);
                         showPublications(body,user.uid,keyPost);
                     });
-                    
-                    
-                
-               })
+                })
             }
             
         } else {
@@ -145,33 +139,62 @@ function showPublications(postContent,userId,keyPost){
     publications.appendChild(sectionButtons);
 
     let likePoints = document.querySelector(`#likecount${keyPost}`); 
+    
 
     let likes = document.querySelector(`#like${keyPost}`); 
-    likes.addEventListener('click', () => { 
-        let userId = firebase.auth().currentUser.uid; 
+    
+        //let userId = firebase.auth().currentUser.uid; 
         //const currentPost = document.getElementById(`like${keyPost}`); 
-        const likeButton = likes.querySelector('.like-button'); 
-        firebase.database().ref('posts/' + keyPost) 
-        .once('value', (postRef) =>{ 
-            const postLike = postRef.val(); 
-
-            const objRefLike = postLike.postWithLikes || []; 
-
-            likePoints.innerHTML=objRefLike.length; 
+        //const likeButton = likes.querySelector('.like-button'); 
+    firebase.database().ref('posts/' + keyPost) 
+    .once('value', (postRef) =>{ 
+        const postLike = postRef.val();
+        const objRefLike = postLike.postWithLikes || [];  
+        if(objRefLike.length===0){
+            // likePoints.innerHTML=objRefLike.length; 
+            likePoints.innerHTML='';
+            likes.classList.remove('mg');
+        }else if(objRefLike.length===1){
+            likePoints.innerHTML=objRefLike.length;
+            likes.classList.add('mg');
+        }
+        likes.addEventListener('click', () => { 
             if (objRefLike.indexOf(userId) === -1) { 
                 objRefLike.push(userId); 
                 postLike.likeCount = objRefLike.length; 
-            } else if (objRefLike.indexOf(userId) === 0) { 
-                likeButton.disabled = false; 
-            }
-            postLike.postWithLikes = objRefLike; 
+                likePoints.innerHTML=objRefLike.length;
+                
+                likes.classList.add('mg');
 
-            let updates = {}; 
-            updates['/posts/' + keyPost] = postLike; 
-            updates['/user-posts/' + userId + '/' + keyPost] = postLike; 
-            return firebase.database().ref().update(updates); 
+                postLike.postWithLikes = objRefLike; 
+                let updates = {}; 
+                updates['/posts/' + keyPost] = postLike; 
+                updates['/user-posts/' + userId + '/' + keyPost] = postLike; 
+                return firebase.database().ref().update(updates); 
+            } //else if (objRefLike.indexOf(userId) === 0) { 
+              //likeButton.disabled = false; 
+              //}
+            else if(objRefLike.indexOf(userId)>-1){
+                objRefLike.splice(objRefLike.indexOf(userId), 1);
+                postLike.likeCount = objRefLike.length;
+                //likePoints.innerHTML=objRefLike.length;
+                likePoints.innerHTML='';
+                likes.classList.remove('mg');
+                postLike.postWithLikes = objRefLike; 
+                let updates = {}; 
+                updates['/posts/' + keyPost] = postLike; 
+                updates['/user-posts/' + userId + '/' + keyPost] = postLike; 
+                return firebase.database().ref().update(updates); 
+            }
+              //postLike.postWithLikes = objRefLike; 
+
+               //let updates = {}; 
+              //updates['/posts/' + keyPost] = postLike; 
+              //updates['/user-posts/' + userId + '/' + keyPost] = postLike; 
+               //return firebase.database().ref().update(updates); 
+            })
         }) 
-    });
+    
 
     let delet = document.querySelector(`#delet${keyPost}`);
     delet.addEventListener('click', () => {
