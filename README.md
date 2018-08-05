@@ -392,9 +392,10 @@ Revisando estos puntos, tomando en cuenta las observaciones y sugerencias hechas
 
  ![10](image/10.png  "10")  
 
- [Link del Prototipo Elegido](https://marvelapp.com/413ca53)
+ [Link del Prototipo Elegido](https://marvelapp.com/5d8dg11)
 
 
+![GIF1](image/GIF1.gif  "GIF1")
 
 
 
