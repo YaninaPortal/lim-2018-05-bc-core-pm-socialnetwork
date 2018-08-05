@@ -146,7 +146,15 @@ Con la entrevista se concluye que:
 
 * El 16% considera que las frases n° 3 y n° 5 representa mejor esta corriente.
 
-  
+## Prototipo de Baja Fidelidad 
+
+## Prototipo de Baja Fidelidad - Versión Mobile
+ 
+![nueimg030](image/nueimg030.jpg  "nueimg030")
+
+## Prototipo de Baja Fidelidad - Versión Desktop
+
+![nueimg031](image/nueimg031.jpg  "nueimg031")
 
 ## Prototipo de Alta Fidelidad
 
