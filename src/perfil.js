@@ -103,7 +103,7 @@ function showPublications(postContent,userId,keyPost){
 
     let sectionPost = document.createElement('textarea'); 
     sectionPost.setAttribute('id', keyPost); 
-    sectionPost.textContent = postContent; 
+    sectionPost.textContent = postContent;
 
     let sectionLike = document.createElement('div'); 
     let pLike=document.createElement('span'); 

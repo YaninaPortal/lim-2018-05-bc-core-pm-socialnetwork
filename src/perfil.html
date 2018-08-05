@@ -8,14 +8,27 @@
     <title>Document</title>
 </head>
 <body>
-    <div id ='perfil'>
+    <header>
+        <button id="wall" type="button">muro</button>
+        <button id="perfil" type="button">perfil</button>
+        <button type="button" id="btnLogout" value="Logout">logout</button>
+       
+    </header>
+    <div id="sectionWall"  >
+        <div id="contentWall">
+            <h3>Publicaciones</h3>
+            <div id="publicaciones" >
+                        
+            </div>
+        </div>
+
+     
+     
+    </div>
+    <div id ="sectionPerfil" class ="hiden">
         
-        <div id="login">
-            <button type="button" id="btnLogout" value="Logout">logout</button>
-         </div>  
-         <div id="contenido"></div>
-        
-              
+       
+       <div id="contenido"></div>
         <div id="bd" >
            <textarea name="publication" id="post" cols="30" rows="10"></textarea>
           <button type="button" value="publicar" id="btnSave" >Publicar</button>
@@ -24,6 +37,7 @@
            <h3>Publicaciones</h3>
        </div>
     </div>
+    
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
    <script>
      // Initialize Firebase
