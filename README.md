@@ -395,7 +395,7 @@ Revisando estos puntos, tomando en cuenta las observaciones y sugerencias hechas
  [Link del Prototipo Elegido](https://marvelapp.com/5d8dg11)
 
 
-![GIF1](image/GIF1.gif  "GIF1")
+![GIF3](image/GIF3.gif  "GIF3")
 
 
 
