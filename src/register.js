@@ -3,7 +3,6 @@ let  email = document.getElementById('email');
 let  password = document.getElementById('password');
 let  confirmPassword = document.getElementById('confirmPassword');
 const  btnregister = document.getElementById('btnregister');
-const  register = document.getElementById('register');
 const error = document.querySelector('.error');
 const err = document.querySelector('.err');
 

@@ -12,7 +12,7 @@
 
 En la actualidad existen diferentes redes sociales como: Instagram, Snapchat, Twitter, Facebook, etc. que nos permite comunicarnos y entretenernos, convirtiéndolas así en un medio más fácil y rápido para compartir y recibir información a nivel global, llegando a crear niveles de dependencia en la vida del ser humano y en su ámbito social.
 
-Es así que las redes sociales toman un lugar predominante es nuestras vidas, ya que nos permite relacionar a todo nivel y puede ser utilizada por cualquier persona, inclusive las pequeñas y grandes empresas han aprovechado estos medios para llegar a nuevos clientes.
+Es así que las redes sociales toman un lugar predominante en nuestras vidas, ya que nos permite relacionarnos a todo nivel y pueden ser utilizada por cualquier persona, inclusive las pequeñas y grandes empresas han aprovechado estos medios para llegar a nuevos clientes.
 
   
 
@@ -20,7 +20,7 @@ Es así que las redes sociales toman un lugar predominante es nuestras vidas, ya
 
   
 
-Hoy en día la población relaciona al feminismo con la idea de que las mujeres se quiere igualar a los hombres y que es una corriente solo para mujeres, nada más alejado de la realidad, lo que nos demuestra que hay mucha desinformación a nivel general tanto en la población femenina como en la masculina. Es así que viendo esta necesidad de información y viendo la oportunidad de comunicación que nos ofrecen las redes sociales surge la idea de crear una red social de feministas que nos permita informar a la población sobre esta corriente(feminismo) que no es exclusiva solo de mujeres si no que por el contrario también tiene entre sus miembros a muchos hombres que creen firmemente en el principio fundamental del Feminismo: "La Igualdad de Derechos".
+Hoy en día la población relaciona a la corriente feminista con la idea de que las mujeres se quiere igualar a los hombres y que es una corriente solo para mujeres, nada más alejado de la realidad, lo que nos demuestra que hay mucha desinformación a nivel general tanto en la población femenina como en la masculina. Es así que viendo esta necesidad de información y viendo la oportunidad de comunicación que nos ofrecen las redes sociales surge la idea de crear una red social de feministas que nos permita informar a la población sobre esta corriente(feminismo) que no es exclusiva solo de mujeres si no que por el contrario también tiene entre sus miembros a muchos hombres que creen firmemente en el principio fundamental del Feminismo: "La Igualdad de Derechos".
 
   
 
@@ -32,7 +32,7 @@ Hoy en día la población relaciona al feminismo con la idea de que las mujeres 
 
 ¡Soy Feminista! es una Red Social dirigida a la población Feminista (mujeres y hombres) y a aquellas personas que necesiten informarse sobre esta corriente llamada "Feminismo", donde podrás compartir información concerniente a esta corriente, compartir comentarios, postear fotos, etc.
 
-¡Soy Feminista! te permite conectarte con otras personas y se puede abrir en cualquier dispositivo web desde un celular hasta una laptop, lo que la hace de fácil acceso para nuestros usuarios.
+¡Soy Feminista! te permite conectarte con otras personas y se puede abrir en cualquier dispositivo web desde un móvil hasta una laptop, lo que la hace de fácil acceso para nuestros usuarios.
 
   
 
@@ -74,7 +74,7 @@ Formulario de la encuesta :
 Con la encuesta se concluye que:
   
 
-* La mayoría de las personas que usan redes sociales es del sexo femenino.
+* La mayoría de las personas que usan redes sociales son del sexo fémenino.
 
   
 
@@ -82,7 +82,7 @@ Con la encuesta se concluye que:
 
   
 
-* Del 100% de hombres encuestados el 80% no conoce el significado de Feminismo y ven al feminismo como una amenaza.
+* Del 100% de hombres encuestados el 75% no conoce el significado de Feminismo y ven al feminismo como una amenaza.
 
   
 
@@ -90,7 +90,7 @@ Con la encuesta se concluye que:
 
   
 
-* Del 100% de encuestados el 71% considera que debería de existir una red social que trate el tema del Feminismo.
+* Del 100% de encuestados el 75% considera que debería de existir una red social que trate el tema del Feminismo.
 
   
 
@@ -100,39 +100,39 @@ Con la encuesta se concluye que:
 
 ## Entrevista dirigida a nuestro público objetivo
 
-Esta entrevista tuvo como objetivo conocer que Lema representaba mejor al Feminismo.
+Esta entrevista tuvo como objetivo conocer que Lema representaba mejor al Feminismo para tomarla como lema de nuestra red social.
 
-  
 
 Frases propuestas:
 
-  
-
-1.- Cuando todos seamos iguales todos seremos más libres.
-
-  
-
-2.- No queremos poder sobre los hombres sino sobre nosotras mismas.
-
-  
-
-3.-No estoy aceptando las cosas que puedo cambiar, estoy cambiando las cosas que no puedo aceptar.
-
-  
-
-4.-No buscamos la igualdad, buscamos la liberación de la mujer, la igualdad es la consecuencia de ello.
-
-  
-
-5.-Cuando estamos en silencio somos una y cuando hablamos somos todas.
-
-  
-
-6.- El futuro es Femenino.
-
-  
-
 Total de entrevistados: 45 personas.
+
+
+1.- Cuando todos seamos iguales todos seremos más libres (21).
+
+  
+
+2.- No queremos poder sobre los hombres sino sobre nosotras mismas (6).
+
+  
+
+3.-No estoy aceptando las cosas que puedo cambiar, estoy cambiando las cosas que no puedo aceptar (7).
+
+  
+
+4.-No buscamos la igualdad, buscamos la liberación de la mujer, la igualdad es la consecuencia de ello (2).
+
+  
+
+5.-Cuando estamos en silencio somos una y cuando hablamos somos todas (7).
+
+  
+
+6.- El futuro es Femenino (2).
+
+  
+
+
 
   
 
@@ -140,7 +140,7 @@ Con la entrevista se concluye que:
 
   
 
-* El 47 % considera que la frase n° 1 representa mejor esta corriente, concluyendo la mayoría que esta frase es inclusiva pues se extiende y acoge a todos los géneros.
+* El 47 % considera que la frase n° 1 representa mejor esta corriente, concluyendo la mayoría que esta frase es inclusiva porque unifica a todos los géneros.
 
   
 
@@ -188,19 +188,20 @@ Considerando que las redes sociales nos permiten llegar a cualquier parte del mu
 ### Time's Up Now
 
 Esta cuenta de Instagram tiene su origen en en el movimiento homónimo creado en 2006 para luchar contra el abuso sexual contra las mujeres. A día de hoy ha vuelto a ganar importancia debido, entre otras noticias, al apoyo de actrices como Jennifer Lawrence, Reese Whiterspoon, Cate Blanchett o Emma Stone, que han firmado el manifiesto para luchar también contra la desigualdad de la mujer.
+* Seguidores: 654K
 
   
 
 ### Global Fund Women
 
 Esta cuenta de Instagram pertenece a una organización del mismo nombre que invierte su tiempo y sus fondos en los movimientos de las mujeres. Apoyan a todas las personas que se involucran de una manera activa en los grupos feministas. Su filosofía es clara: "Las mujeres son las mejores agentes en sus comunidades locales y hay que darles recursos y voz para que puedan cambiar el mundo".
-
+* Seguidores: 64.2K
   
 
 ### Makers
 
 Lanzada en 2012, esta plataforma trata de entrevistar a todas aquellas mujeres pioneras de hoy y de mañana, según explican en su web. Hasta hoy han producido más de 4.500 vídeos a través de sus 400 productores. Entre los vídeos más destacados destacan los realizados a figuras del feminismo como Lena Dunham, Oprah Winfrey, Shonda Rhimes o, a pioneras como la primera árbitro de la NBA o Violet Palmer, la primera corredora de la Maratón de Boston.
-
+* Seguidores: 140K
   
 
 ### Redes sociales a nivel Local
@@ -263,19 +264,19 @@ Tocan a una tocan a todas, es una consigna que dio nombre a un movimiento femini
 
 ## CONCLUSIONES DEL BENCHMARK
 
-Actualmente existen muchos movimientos que tiene como bandera al Feminismo y todos nacieron con la finalidad de ser un medio de información, usando como medio a las diferentes redes sociales existentes, siendo la más usada Facebook y Twitter, teniendo como público objetivo en su mayoría solo al sexo femenino.
+Actualmente existen muchos movimientos que tiene como bandera al Feminismo y todos nacieron con la finalidad de informar y empoderar a las mujeres, usando como medio a las diferentes redes sociales existentes, siendo la más usada Facebook y Twitter, teniendo como público objetivo en su mayoría solo al sexo femenino.
 
   
 
 Con esta información podemos concluir:
 
-1.- No existe una Red Social que toque el tema del Feminismo,
+1.- No existe una Red Social que toque el tema del Feminismo.
 
 2.- Los Movimientos Feministas al usar plataformas como Facebook y twiter limitan su funcionalidad.
 
 3.- Al ser la primera red social Feminista serviremos de plataforma para todxs estxs movimientos.
 
-4.- Seremos una red social que considere a todxs los géneros como su público objetivo, tomando esto en cuenta para el diseño de nuestra red social.
+4.- Seremos la primera red social que considere a todxs los géneros como su público objetivo, tomando ésto en cuenta para el diseño de nuestra red social.
 
   
 ## ENTREVISTA
@@ -373,8 +374,16 @@ Nuestrxs entrevistadxs manifestaron:
 [Link del Prototipo 3](https://marvelapp.com/413539a)
 
 
- Recibiendo diferentes feedback tanto en los colores como la distribución de las imágenes y tomando las recomendaciones hechas por nuestros usuarios concluimos en el siguiente prototipo.
+Se testearon 3 prototipos con los usuarios, recibiendo diferentes feedback tanto en los colores como la distribución de las imágenes.
+Al testearlos observamos en nuestros usuarios lo sgte:
 
+   * Les incomodaba el Loading por el tiempo de espera.
+   * Las imágenes no les hacían alusión al tema.
+   * La combinación de colores no les atraía.
+   * La ubicación de los botones los confundía.
+
+Revisando estos puntos, tomando en cuenta las observaciones y sugerencias hechas por nuestros usuarios concluimos en el siguiente prototipo tratando de consolidar todos los aportes obtenidos a través del test.
+   
    ## Prototipo Elegido
 
  ![8](image/8.png  "8")
@@ -383,8 +392,7 @@ Nuestrxs entrevistadxs manifestaron:
 
  ![10](image/10.png  "10")  
 
-
-[Link del Prototipo Elegido](https://marvelapp.com/413ca53)
+ [Link del Prototipo Elegido](https://marvelapp.com/413ca53)
 
 
 
