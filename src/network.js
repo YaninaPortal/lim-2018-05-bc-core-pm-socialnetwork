@@ -8,7 +8,7 @@ function writeUserData(userId, name, email, imageUrl) {
   
 }
 
-function writeNewPost(uid, body) {
+function writeNewPost(uid, body,name,imageUrl) {
   // A post entry.
   
   var postData = {
@@ -16,7 +16,8 @@ function writeNewPost(uid, body) {
     uid: uid,
     body: body,
     starCount: 0,
-    
+    username:name,
+    image:imageUrl,
   };
 
 
@@ -31,20 +32,4 @@ function writeNewPost(uid, body) {
   firebase.database().ref().update(updates);
   return newPostKey;
 }
-function toggleStar(postRef, uid) {
-  postRef.transaction(function(post) {
-    if (post) {
-      if (post.stars && post.stars[uid]) {
-        post.starCount--;
-        post.stars[uid] = null;
-      } else {
-        post.starCount++;
-        if (!post.stars) {
-          post.stars = {};
-        }
-        post.stars[uid] = true;
-      }
-    }
-    return post;
-  });
-}
+
