@@ -1,4 +1,4 @@
-s<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@ s<!DOCTYPE html>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#home-section" class="nav-link">
+                        <a href="#" id="wall" value="muro" class="nav-link active">
                             <span>
                                 <img src="../image/home.png" alt="icono-home">
                             </span>
@@ -43,7 +43,7 @@ s<!DOCTYPE html>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" id="perfil" value="perfil" class="nav-link">
                             <span>
                                 <img src="../image/user.png" alt="icono-user">
                             </span>
@@ -60,11 +60,60 @@ s<!DOCTYPE html>
             </div>
         </div>
     </nav>
-    <div id="perfil" class="contain" >
+ <section>
+     <div class="container-fluid">
+       <div class="row">
+           <div class="col-3">
+
+           </div>
+           <div id="publicaciones" class="col-6">
+
+           </div>
+           <div class="col-3">
+
+           </div>
+
+       </div>
+     </div>
+ </section>
+
+
+
+
+
+      <div id="sectionWall"  >
+        <div id="contentWall">
+            <h3>Publicaciones</h3>
+            <div id="publicaciones" >
+                        
+            </div>
+        </div>
+      
+      
+      
+      </div>
+      <div id ="sectionPerfil" class ="hiden">
         
-        <!-- <div id="login">
-            <button type="button" id="btnLogout" value="Logout">logout</button>
-         </div>   -->
+       
+       <div id="contenido"></div>
+        <div id="bd" >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div id="perfil" class="contain" >
+        
+        
          <div id="contenido"></div>
         
               
@@ -75,7 +124,7 @@ s<!DOCTYPE html>
       <div id="posted" >
            <h3>Publicaciones</h3>
        </div>
-    </div>
+    </div> -->
     
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
     <script>
