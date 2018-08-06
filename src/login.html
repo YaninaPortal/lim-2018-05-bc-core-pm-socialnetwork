@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <title>SOY FEMINISTA</title>
+</head>
+<body>
+  <header id="section-1" class="fondo">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-8 d-none text-center pt-5 d-sm-block">
+          <h1>Cuando todos seamos iguales,todos seremos mas libres </h1>
+          <img  id="img-portada" src="../image/fondo.png" alt="logo" class="d-block-inline w-50">
+        </div>
+        <!--portada -->
+        <div class="col-lg-3 pt-5">
+          <div class="card text-center">
+            <div class="card-body fond">
+              <h3>SOY FEMINISTA</h3>
+              <br>
+              <div class="text-center d-sm-block">
+              <img id="img-logo" src="../image/logo.png" alt="logo" class="d-block-inline w-50">
+              </div>
+              <form class="text-left">
+                <div class="form-group row">
+                  <label for="email" class="col-sm-4 col-form-label col-form-label-sm ">Email</label>
+                  <input type="email" class=" form-control form-control-sm col-sm-8" id="mail" placeholder="Email" required>
+                  <span class="error" ></span>
+                </div>
+                <div class="form-group row">
+                  <label for="password" class="col-sm-4 col-form-label col-form-label-sm ">Contraseña</label>
+                  <input type="password" class=" form-control form-control-sm col-sm-8" id="pass" placeholder="Password" required>
+                </div>
+              <br>
+                <div class="contain">
+                  <div class="flex-c-m">
+                    <a type="button" href="" id="btnsignin" class="btn  btn-md btn-in-line ml-5  button" value="btnLogin">Ingresar</a>
+                    <a type="button" href="#" id="showRegister" class="btn  btn-md btn-in-line  button" value="Registrate">Registrarse</a>
+                  </div>
+                </div>
+                <div class="col-lg-1"></div>
+              </form>
+              <br>
+                <div class="contain">
+                  <div class="text-center d-sm-block">
+                    <button  type="button" id="facebook" class="btn btn-outline-light btn-sm d-block-inline button"><span> <img class="" src="../image/facebook.png" alt="Icono de Facebook"></span></button>
+                    <button type="button" id="google" class="btn btn-outline-light btn-sm d-block-inline button"><span> <img class="" src="../image/google-plus.png" alt="Icono de google"></span></button> 
+                  </div>
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header> 
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+   <script>
+     // Initialize Firebase
+     var config = {
+       apiKey: "AIzaSyBDC5jCsH9YilLHYSnbV_rHdV--wCd__GM",
+       authDomain: "feminismo-d7df2.firebaseapp.com",
+       databaseURL: "https://feminismo-d7df2.firebaseio.com",
+       projectId: "feminismo-d7df2",
+       storageBucket: "feminismo-d7df2.appspot.com",
+       messagingSenderId: "992535526426"
+      };
+     firebase.initializeApp(config);
+      // Get a reference to the database service
+      var database = firebase.database();
+   </script>
+   <script src="network.js"></script>
+    
+   <script src="login.js"></script>
+   <script src="index.js"></script>
+    <!--bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
