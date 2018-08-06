@@ -202,8 +202,6 @@ input:focus .invalid {
         width: 7.7em;
         display: inline-block
     }
-    .navbar-brand{
-        display: none;
-    }
+    
    
 }
