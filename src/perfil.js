@@ -13,20 +13,38 @@ const bd=document.getElementById('bd');
 let contenido=document.getElementById('contenido');
 var database = firebase.database();
 
+
+btnSave.addEventListener('click',()=>{
+    let userId=firebase.auth().currentUser.uid;
+    let displayName=firebase.auth().currentUser.displayName;
+    
+    
+    if(displayName!=null){
+        let imageUrl=firebase.auth().currentUser.photoURL;
+        const newPost=writeNewPost(userId,post.value,displayName,imageUrl);
+         reload_page();
+        
+    }else{
+        let images='http://droidlessons.com/wp-content/uploads/2017/05/person-1824144_960_720-e1494184045144.png';
+        const nePost=writeNewPost(userId,post.value,displayName,images);
+        reload_page();
+    }
+    
+})
+
 firebase.database().ref().child('posts')
 .once ('value',function(data){
     let dataUserPosts=data;
-    console.log(dataUserPosts);
+    
     let arrkeypost=Object.keys(dataUserPosts.val());
-    console.log(arrkeypost);
+    
     arrkeypost.forEach(keyPost=>{
-      console.log(keyPost)
+      
       let body=dataUserPosts.val()[keyPost].body;
       let uid=dataUserPosts.val()[keyPost].uid;
       let nameUser=dataUserPosts.val()[keyPost].username;
       let img=dataUserPosts.val()[keyPost].image;
-      console.log(nameUser);
-      console.log(img);
+      
       
       showWall(body,uid,keyPost,nameUser,img)
             
@@ -211,15 +229,6 @@ btnLogout.addEventListener('click',()=>{
 });
 
 
-btnSave.addEventListener('click',()=>{
-    let userId=firebase.auth().currentUser.uid;
-    let displayName=firebase.auth().currentUser.displayName;
-    
-    let imageUrl=firebase.auth().currentUser.photoURL;
-    
-    const newPost=writeNewPost(userId,post.value,displayName,imageUrl);
-    reload_page();
-})
 function showPublications(postContent,userId,keyPost){ 
     let publications = document.createElement('div');
     publications.setAttribute('class', 'divPost'); 

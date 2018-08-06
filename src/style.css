@@ -66,6 +66,12 @@ display:none;
     font-family: Arial, Helvetica, sans-serif;   
 }
 
+#img-portada{
+position: absolute;
+/* margin-left: 200px; 
+
+} */
+}
 .valid{
     border-color: green;
     background-color: rgb(243, 247, 243);
@@ -126,13 +132,7 @@ input:focus .invalid {
     text-align: center;
 }
 /*clase para el titulo donde dice publicacion*/
-.tittle{
-    
-    padding:  20px 50px;
-    border-style: solid;
-    border-width: 2em 12.8em 0em;
-    border-color: #E9EBEE;
-}
+
 /*clase para cada post q se cree*/
 .divPost{
     
@@ -154,7 +154,7 @@ input:focus .invalid {
 }
 /*clase para medidas de los 3 botones */
 .btns{
-    width: 17.9em;
+    width: 19.3em;
     border: solid;
     border-color: #E9EBEE;
     border-width: 0px 0px 0.2px 1px;
@@ -179,15 +179,10 @@ input:focus .invalid {
 }
 
 /*para responsive solo con galaxy s5*/
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 360px) {
 
-    .tittle{
-        font-size: 15px;
-        padding: 20px 10px;
-        border-width: 20px 0px 0px;
-    }
    .divNamImg{
-        padding:  20px 50px;
+        padding:  10px 10px;
         border-width: 10px 0px 1px;
     }
     .divPost{
@@ -204,8 +199,9 @@ input:focus .invalid {
        border-width: 0px 0px 20px;   
     }
     .btns{
-        width: 6.6em;
+        width: 5.8em;
         display: inline-block
     }
+    
    
 }
