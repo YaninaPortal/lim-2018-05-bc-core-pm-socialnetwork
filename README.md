@@ -146,7 +146,15 @@ Con la entrevista se concluye que:
 
 * El 16% considera que las frases n° 3 y n° 5 representa mejor esta corriente.
 
-  
+## Prototipo de Baja Fidelidad 
+
+## Prototipo de Baja Fidelidad - Versión Mobile
+ 
+![nueimg030](image/nueimg030.jpg  "nueimg030")
+
+## Prototipo de Baja Fidelidad - Versión Desktop
+
+![nueimg031](image/nueimg031.jpg  "nueimg031")
 
 ## Prototipo de Alta Fidelidad
 
@@ -155,15 +163,14 @@ Con la entrevista se concluye que:
 ## Figma
 
   
-
 ![nuevo1](image/nuevo1.png  "nuevo1")
 
 ![nuevo2](image/nuevo2.png  "nuevo2")
 
-  
+
 ## Marvel
 
-[Prototipo de Alta Fidelidad](https://marvelapp.com/32i460c)
+![primer_prototipo](image/primer_prototipo.gif  "primer_prototipo")
 
   
 ## SPRINT #2  
@@ -346,32 +353,15 @@ Nuestrxs entrevistadxs manifestaron:
 
  ## Prototipo #1 
 
- ![1](image/1.png  "1")
-
- ![2](image/2.png  "2")
-
-
-[Link del Prototipo 1](https://marvelapp.com/4168a4a)
+![segundo_prototipo](image/segundo_prototipo.gif  "segundo_prototipo")
 
  ## Prototipo #2
 
- ![3](image/3.png  "3")
-
- ![4](image/4.png  "4")
-
-
-[Link del Prototipo 2](https://marvelapp.com/32i460c)
+![tercer_prototipo](image/tercer_prototipo.gif  "tercer_prototipo")
 
  ## Prototipo #3
 
-![5](image/5.png  "5")
-
-![6](image/6.png  "6")
-
-![7](image/7.png  "7")
-
-
-[Link del Prototipo 3](https://marvelapp.com/413539a)
+![cuarto_prototipo](image/cuarto_prototipo.gif  "cuarto_prototipo")
 
 
 Se testearon 3 prototipos con los usuarios, recibiendo diferentes feedback tanto en los colores como la distribución de las imágenes.
@@ -386,15 +376,7 @@ Revisando estos puntos, tomando en cuenta las observaciones y sugerencias hechas
    
    ## Prototipo Elegido
 
- ![8](image/8.png  "8")
-
- ![9](image/9.png  "9")
-
- ![10](image/10.png  "10")  
-
- [Link del Prototipo Elegido](https://marvelapp.com/413ca53)
-
-
+![GIF3](image/GIF3.gif  "GIF3")
 
 
 
