@@ -30,7 +30,7 @@ Hoy en día la población relaciona a la corriente feminista con la idea de que 
 
 ### Definición del producto
 
-¡Soy Feminista! es una Red Social dirigida a la población Feminista (mujeres y hombres) y a aquellas personas que necesiten informarse sobre esta corriente llamada "Feminismo", donde podrás compartir información concerniente a esta corriente, compartir comentarios, postear fotos, etc.
+¡Soy Feminista! es una Red Social dirigida a la población Feminista (mujeres y hombres) y a aquellas personas que necesiten informarse sobre esta corriente llamada "Feminismo", donde podrás compartir información concerniente a esta corriente, compartir comentarios, postear fotos,  etc.
 
 ¡Soy Feminista! te permite conectarte con otras personas y se puede abrir en cualquier dispositivo web desde un móvil hasta una laptop, lo que la hace de fácil acceso para nuestros usuarios.
 
@@ -69,14 +69,16 @@ Formulario de la encuesta :
 ![](https://image.ibb.co/ht839T/pregunta.png)
 
 ![](https://image.ibb.co/joGtb8/Respuesta.png)
-
-  
 Con la encuesta se concluye que:
   
 
-* La mayoría de las personas que usan redes sociales son del sexo fémenino.
+* El 30% de los encuestados , tiene una idea equivocada dell feminismo.
 
-  
+
+
+* El 20% de los encuestados , no conoce el significado del feminismo.
+
+
 
 * Del 100% de mujeres encuestadas, el 30% no conoce el significado de feminismo y tampoco se considera feminista.
 
@@ -131,11 +133,6 @@ Total de entrevistados: 45 personas.
 6.- El futuro es Femenino (2).
 
   
-
-
-
-  
-
 Con la entrevista se concluye que:
 
   
@@ -156,11 +153,24 @@ Con la entrevista se concluye que:
 
 ![nueimg031](image/nueimg031.jpg  "nueimg031")
 
+## Psicología del color.
+
+Los colores forman parte de nuestra vida , tanto que son los encargados de transmitir emociones y que varíe nuestro estado de ánimo.
+No solo influencia en los sentimientos , sino tambien en las acciones de las personas impulsando a realizar alguna acción o dejando de hacerla ; a permanecer en una página web motivandote a conocer más de ella , realizando una acción concreta dentro de la página web  o simplemente cerrarla por no encontrarle coherencia entre lo que pretende transmitir y lo que ofrece.
+
+Cada color va unido a uno o varios sentimientos y viceversa , a cada uno de los sentimientos podemos aplicarle un color.
+
+Basado en ello , elegimos el color azul con el que se asocia calma , seriedad , fortaleza , confianza , tranquilidad ; emociones que queremos que transmitir ya que es un tema que origina discrepancias debido a una percepción errónea que algunos tienen por la poca información que hay o a grupos radicales que desvirtuan el real objetivo del feminismo que es la igualdad y no la supremacia de un género.
+
+Pero más allá de la psicología del básica del color , algunos estudios han demostrado que el género afecta las preferencias en cuanto a colores de las personas y el color azul es un color que coincidimos amnbos géneros en su agrado , por ello de su elección como color principal , ya que nuestro objetivo es que tanto hombres como mujeres sean parte de nuestra red social y derribar esa percepción errónea que el feminismo se asocie con un solo género.
+
+El color gris transmite confianza, profesionalismo emociones que queremos transmitir ya que hay grupos extremistas que pretenden desvituar el real objetivo del feminismo , mediante la desinformación .
+
+Elegimos como logo el simbolo del hombre y la mujer , interceptado con un símbolo de igualdad porque resume la verdadera razón de ser del feminismo , la lucha por la igualdad de género . 
+
 ## Prototipo de Alta Fidelidad
 
-  
-
-## Figma
+  ## Figma
 
   
 ![nuevo1](image/nuevo1.png  "nuevo1")
@@ -172,9 +182,7 @@ Con la entrevista se concluye que:
 
 ![primer_prototipo](image/primer_prototipo.gif  "primer_prototipo")
 
-  
-## SPRINT #2  
-  
+[Link del Prototipo](https://marvelapp.com/3bb83fe)
 
 ## BENCHMARK DE LAS PRINCIPALES REDES SOCIALES.
 
@@ -355,13 +363,19 @@ Nuestrxs entrevistadxs manifestaron:
 
 ![segundo_prototipo](image/segundo_prototipo.gif  "segundo_prototipo")
 
+[Link del Primer Prototipo ](https://marvelapp.com/41fi692)
+
  ## Prototipo #2
 
 ![tercer_prototipo](image/tercer_prototipo.gif  "tercer_prototipo")
 
+[Link del Segundo Prototipo ](https://marvelapp.com/32i460c)
+
  ## Prototipo #3
 
 ![cuarto_prototipo](image/cuarto_prototipo.gif  "cuarto_prototipo")
+
+[Link del Tercer Prototipo ](https://marvelapp.com/413539a)
 
 
 Se testearon 3 prototipos con los usuarios, recibiendo diferentes feedback tanto en los colores como la distribución de las imágenes.
@@ -378,7 +392,7 @@ Revisando estos puntos, tomando en cuenta las observaciones y sugerencias hechas
 
 ![GIF3](image/GIF3.gif  "GIF3")
 
-
+[Link del Prototipo Elegido ](https://marvelapp.com/5d8dg11)
 
 
 
