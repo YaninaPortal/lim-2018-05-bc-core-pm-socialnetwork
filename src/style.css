@@ -154,7 +154,7 @@ input:focus .invalid {
 }
 /*clase para medidas de los 3 botones */
 .btns{
-    width: 19.65em;
+    width: 19.3em;
     border: solid;
     border-color: #E9EBEE;
     border-width: 0px 0px 0.2px 1px;
@@ -199,7 +199,7 @@ input:focus .invalid {
        border-width: 0px 0px 20px;   
     }
     .btns{
-        width: 7.7em;
+        width: 5.8em;
         display: inline-block
     }
     
