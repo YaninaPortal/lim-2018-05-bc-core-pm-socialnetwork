@@ -22,7 +22,7 @@ s<!DOCTYPE html>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#home-section" class="nav-link">
+                        <a href="#home-section" id="wall" class="nav-link">
                             <span>
                                 <img src="../image/home.png" alt="icono-home">
                             </span>
@@ -43,7 +43,7 @@ s<!DOCTYPE html>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="#" id="perfil" class="nav-link">
                             <span>
                                 <img src="../image/user.png" alt="icono-user">
                             </span>
@@ -60,20 +60,27 @@ s<!DOCTYPE html>
             </div>
         </div>
     </nav>
-    <div id="perfil" class="contain" >
+    <div id="sectionWall"  >
+        <div id="contentWall">
+            <h3 class="tittle">Publicaciones</h3>
+            <div id="publicaciones" >
+                        
+            </div>
+        </div>
+
+     
+     
+    </div>
+    <div id ="sectionPerfil" class ="hiden">
         
-        <!-- <div id="login">
-            <button type="button" id="btnLogout" value="Logout">logout</button>
-         </div>   -->
-         <div id="contenido"></div>
-        
-              
-        <div >
-           <textarea name="publication" id="post" cols="30" rows="10"></textarea>
+       
+       <div id="contenido" class="divPerfil"></div>
+        <div id="bd" class="text" >
+           <textarea name="publication" id="post" cols="30" rows="10"></textarea><br>
           <button type="button" value="publicar" id="btnSave" >Publicar</button>
         </div>
       <div id="posted" >
-           <h3>Publicaciones</h3>
+           <h3 class="tittle">Publicaciones</h3>
        </div>
     </div>
     
