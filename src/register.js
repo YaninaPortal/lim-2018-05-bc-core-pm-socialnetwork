@@ -7,9 +7,8 @@ const error = document.querySelector('.error');
 const err = document.querySelector('.err');
 
 email.addEventListener('keyup',()=>{
-  let exReg =/^[a-zA-Z0-9.#$%&*+_~-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-]*$/;
- // let test = email.value.length === 0 || exReg.test(email.value);
- let test = exReg.test(email.value);
+ 
+  let test =validation(email.value);
  if (test) {
    email.classList.add("valid");
    error.innerHTML = " ";
