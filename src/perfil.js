@@ -1,17 +1,81 @@
+//llamando elementos seccion nav
 const perfil=document.getElementById('perfil');
 const wall=document.getElementById('wall');
-const sectionPerfil=document.getElementById('sectionPerfil');
-const sectionWall=document.getElementById('sectionWall');
-
 const  btnLogout = document.getElementById('btnLogout');
-const  logout = document.getElementById('logout');
+//llamando elementos de la seccion perfil
+const sectionPerfil=document.getElementById('sectionPerfil');
+let contenido=document.getElementById('contenido');
 const post=document.getElementById('post');
 const btnSave=document.getElementById('btnSave');
 const posted=document.getElementById('posted');
-const bd=document.getElementById('bd');
+//llamando elementos de la seccion muro
+const sectionWall=document.getElementById('sectionWall');
+const publicaciones= document.getElementById('publicaciones');
 
-let contenido=document.getElementById('contenido');
 var database = firebase.database();
+
+
+perfil.addEventListener('click',()=>{
+    sectionWall.classList.add('hiden');
+    sectionPerfil.classList.remove('hiden');
+   
+});
+
+wall.addEventListener('click',()=>{
+    sectionPerfil.classList.add('hiden');
+    sectionWall.classList.remove('hiden');
+})
+
+
+// window.onload = ( ) =>{
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            
+            console.log('Inicio Logueado');
+            
+            //console.log(user.uid);
+
+            var fire=firebase.database().ref().child('users');
+            fire.on ('value',function(data){
+                
+              contenido.innerHTML=
+                `<div>
+                <img src="${data.val()[user.uid].profile_picture}" alt="perfil" width="70" height="70">
+                <h2>Hola  ${data.val()[user.uid].username}</h2>
+                <p>${data.val()[user.uid].email}</p>
+                </div>`;
+            })
+            var fire=firebase.database().ref().child('user-posts');
+            fire.once ('value',function(data){
+
+                let dataUserPosts=data;
+                let arrkeypost=Object.keys(dataUserPosts.val()[user.uid]);
+                //console.log(arrkeypost);
+                    
+                arrkeypost.forEach(keyPost=>{
+                    //console.log(keyPost)
+                    let body=dataUserPosts.val()[user.uid][keyPost].body;
+                    //console.log(body);
+                    showPublications(body,user.uid,keyPost);
+                });
+            })    
+        } else {
+            console.log('No esta logueado');
+        }
+   });
+ 
+
+
+
+   
+
+    
+// }
+
+
+
+
+
 
 
 btnSave.addEventListener('click',()=>{
@@ -22,7 +86,7 @@ btnSave.addEventListener('click',()=>{
     if(displayName!=null){
         let imageUrl=firebase.auth().currentUser.photoURL;
         const newPost=writeNewPost(userId,post.value,displayName,imageUrl);
-         reload_page();
+        reload_page();
         
     }else{
         let images='http://droidlessons.com/wp-content/uploads/2017/05/person-1824144_960_720-e1494184045144.png';
@@ -52,7 +116,7 @@ firebase.database().ref().child('posts')
     });
 });
     
-function showWall(body,uid,keyPost,nameUser,img){
+function showWall(body,uid,keyPost,nameUser,imgUse){
     let namePhoto = document.createElement('div');
     let publications = document.createElement('div');
 
@@ -65,43 +129,47 @@ function showWall(body,uid,keyPost,nameUser,img){
     let sectionPost=document.createElement('textarea');
     
     sectionPost.setAttribute('id', keyPost);
-    image.setAttribute('src', img);
+    image.setAttribute('src', imgUse);
     image.setAttribute('width', '30'); 
     image.setAttribute('height', '30');  
     
     sectionPost.textContent = body;
     namePost.textContent=nameUser;
 
-    let sectionLike = document.createElement('div');
+    let sectionLik = document.createElement('div');
     
 
-    let pLike=document.createElement('span'); 
-    pLike.setAttribute('id', `likecount${keyPost}`);
+    let pLik=document.createElement('span'); 
+    pLik.setAttribute('id', `likeco${keyPost}`);
     
 
-    let btnLike= document.createElement('input'); 
-    btnLike.setAttribute('id', `like${keyPost}`); 
+    let btnLik= document.createElement('input'); 
+    btnLik.setAttribute('id', `lik${keyPost}`); 
     //btnLike.setAttribute('class','falta clase'); 
-    btnLike.setAttribute('value','Me gusta'); 
-    btnLike.setAttribute('type','button'); 
+    btnLik.setAttribute('value','Me gusta'); 
+    btnLik.setAttribute('type','button'); 
 
     
 
-    sectionLike.appendChild(btnLike); 
-    sectionLike.appendChild(pLike); 
+     
     
-    namePhoto.appendChild(image);
-    namePhoto.appendChild(namePost)
     publicaciones.appendChild(namePhoto);
     publicaciones.appendChild(publications);
+
+    namePhoto.appendChild(image);
+    namePhoto.appendChild(namePost);
+
     publications.appendChild(sectionPost);
-    publications.appendChild(sectionLike); 
+    publications.appendChild(sectionLik); 
+
+    sectionLik.appendChild(btnLik); 
+    sectionLik.appendChild(pLik);
     
 
-    let likePoints = document.querySelector(`#likecount${keyPost}`); 
+    let likePo = document.querySelector(`#likeco${keyPost}`); 
     
 
-    let likes = document.querySelector(`#like${keyPost}`); 
+    let lik = document.querySelector(`#lik${keyPost}`); 
     
     firebase.database().ref('posts/' + keyPost) 
     .once('value', (postRef) =>{ 
@@ -109,19 +177,19 @@ function showWall(body,uid,keyPost,nameUser,img){
         const objRefLike = postLike.postWithLikes || [];  
         if(objRefLike.length===0){
             // likePoints.innerHTML=objRefLike.length; 
-            likePoints.innerHTML='';
-            likes.classList.remove('mg');
+            likePo.innerHTML='';
+            lik.classList.remove('mg');
         }else if(objRefLike.length===1){
-            likePoints.innerHTML=objRefLike.length;
-            likes.classList.add('mg');
+            likePo.innerHTML=objRefLike.length;
+            lik.classList.add('mg');
         }
-        likes.addEventListener('click', () => { 
+        lik.addEventListener('click', () => { 
             if (objRefLike.indexOf(uid) === -1) { 
                 objRefLike.push(uid); 
                 postLike.likeCount = objRefLike.length; 
-                likePoints.innerHTML=objRefLike.length;
+                likePo.innerHTML=objRefLike.length;
                 
-                likes.classList.add('mg');
+                lik.classList.add('mg');
 
                 postLike.postWithLikes = objRefLike; 
                 let updates = {}; 
@@ -135,8 +203,8 @@ function showWall(body,uid,keyPost,nameUser,img){
                 objRefLike.splice(objRefLike.indexOf(uid), 1);
                 postLike.likeCount = objRefLike.length;
                 //likePoints.innerHTML=objRefLike.length;
-                likePoints.innerHTML='';
-                likes.classList.remove('mg');
+                likePo.innerHTML='';
+                lik.classList.remove('mg');
                 postLike.postWithLikes = objRefLike; 
                 let updates = {}; 
                 updates['/posts/' + keyPost] = postLike; 
@@ -151,67 +219,6 @@ function showWall(body,uid,keyPost,nameUser,img){
         
     
 
-}
-
-window.onload = ( ) =>{
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            wall.addEventListener('click',()=>{
-             sectionPerfil.classList.add('hiden');
-             sectionWall.classList.remove('hiden');
-            })
-
-            perfil.addEventListener('click',()=>{
-              sectionPerfil.classList.remove('hiden');
-              sectionWall.classList.add('hiden');
-            });
-            console.log('Inicio Logueado');
-            
-            //console.log(user.uid);
-
-            var fire=firebase.database().ref().child('users');
-            fire.on ('value',function(data){
-                
-              contenido.innerHTML=
-                `<div>
-                <img src="${data.val()[user.uid].profile_picture}" alt="perfil" width="70" height="70">
-                <h2>Hola  ${data.val()[user.uid].username}</h2>
-                <p>${data.val()[user.uid].email}</p>
-                </div>`;
-            })
-            var fire=firebase.database().ref().child('user-posts');
-            fire.once ('value',function(data){
-
-                let dataUserPosts=data;
-                let arrkeypost=Object.keys(dataUserPosts.val()[user.uid]);
-                //console.log(arrkeypost);
-                    
-                arrkeypost.forEach(keyPost=>{
-                    //console.log(keyPost)
-                    let body=dataUserPosts.val()[user.uid][keyPost].body;
-                    //console.log(body);
-                    showPublications(body,user.uid,keyPost);
-                });
-            })
-
-            
-                
-            
-            
-        } else {
-            console.log('No esta logueado');
-            
-            
-            
-        }
-   });
- 
-
-
-
-   
-
-    
 }
 
 
@@ -229,14 +236,26 @@ btnLogout.addEventListener('click',()=>{
 });
 
 
-function showPublications(postContent,userId,keyPost){ 
-    let publications = document.createElement('div');
-    publications.setAttribute('class', 'divPost'); 
-
-    let sectionPost = document.createElement('textarea'); 
-    sectionPost.setAttribute('id', keyPost);
+function showPublications(postContent,userId,keyPost,nameUs,img){
     
+    let namePhoto = document.createElement('div');
+    let publications = document.createElement('div');
+
+    publications.setAttribute('class', 'divPost');
+    namePhoto.setAttribute('class','divNameImg'); 
+
+    let namePost=document.createElement('span');
+    let image=document.createElement('img');
+
+    let sectionPost = document.createElement('textarea');
+
+    sectionPost.setAttribute('id', keyPost);
+    image.setAttribute('src', img);
+    image.setAttribute('width', '30'); 
+    image.setAttribute('height', '30');
+
     sectionPost.textContent = postContent;
+    namePost.textContent=nameUs;
 
     let allBtns = document.createElement('div');
     allBtns.setAttribute('class', 'allBtns');
@@ -270,17 +289,22 @@ function showPublications(postContent,userId,keyPost){
     
 
     
-     
+    posted.appendChild(namePhoto); 
     posted.appendChild(publications);
     posted.appendChild(pLike);
     posted.appendChild(allBtns); 
 
+    namePhoto.appendChild(image);
+    namePhoto.appendChild(namePost)
+
     publications.appendChild(sectionPost); 
+
     allBtns.appendChild(btnLike);
     allBtns.appendChild(btnDelete);
     allBtns.appendChild(btnEdit);
 
-    let likePoints = document.querySelector(`#likecount${keyPost}`); 
+    let likePoints = document.querySelector(`#likecount${keyPost}`);
+    likePoints.setAttribute('class','btnLike');  
     
 
     let likes = document.querySelector(`#like${keyPost}`); 
@@ -349,9 +373,12 @@ function showPublications(postContent,userId,keyPost){
 
     let edit = document.querySelector(`#edit${keyPost}`);
     edit.addEventListener('click', () => {
-        const editPost = document.getElementById(keyPost);
-      const nuevoPost = {
+      let editPost = document.getElementById(keyPost);
+      let nuevoPost = {
+            uid: userId,
           body: editPost.value,
+          username:nameUs,
+          image:imgU,
         };
 
        var updatesUser = {};
@@ -362,6 +389,7 @@ function showPublications(postContent,userId,keyPost){
 
       firebase.database().ref().update(updatesUser);
       firebase.database().ref().update(updatesPost);
+      return nuevoPost;
     });
         
     

@@ -15,7 +15,6 @@ function writeNewPost(uid, body,name,imageUrl) {
     
     uid: uid,
     body: body,
-    starCount: 0,
     username:name,
     image:imageUrl,
   };
@@ -33,3 +32,11 @@ function writeNewPost(uid, body,name,imageUrl) {
   return newPostKey;
 }
 
+
+window.validation=(mail)=>{
+  let exReg =/^[a-zA-Z0-9.#$%&*+_~-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-]*$/;
+   // let test = mail.value.length === 0 || exReg.test(mail.value);
+  let test = exReg.test(mail);
+  return test;
+
+}
