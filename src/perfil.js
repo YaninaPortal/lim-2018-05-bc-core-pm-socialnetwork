@@ -72,36 +72,36 @@ function showWall(body,uid,keyPost,nameUser,img){
     sectionPost.textContent = body;
     namePost.textContent=nameUser;
 
-    let sectionLike = document.createElement('div');
+    let sectionLik = document.createElement('div');
     
 
-    let pLike=document.createElement('span'); 
-    pLike.setAttribute('id', `likecount${keyPost}`);
+    let pLik=document.createElement('span'); 
+    pLik.setAttribute('id', `likeco${keyPost}`);
     
 
-    let btnLike= document.createElement('input'); 
-    btnLike.setAttribute('id', `like${keyPost}`); 
+    let btnLik= document.createElement('input'); 
+    btnLik.setAttribute('id', `lik${keyPost}`); 
     //btnLike.setAttribute('class','falta clase'); 
-    btnLike.setAttribute('value','Me gusta'); 
-    btnLike.setAttribute('type','button'); 
+    btnLik.setAttribute('value','Me gusta'); 
+    btnLik.setAttribute('type','button'); 
 
     
 
-    sectionLike.appendChild(btnLike); 
-    sectionLike.appendChild(pLike); 
+    sectionLik.appendChild(btnLik); 
+    sectionLik.appendChild(pLik); 
     
     namePhoto.appendChild(image);
     namePhoto.appendChild(namePost)
     publicaciones.appendChild(namePhoto);
     publicaciones.appendChild(publications);
     publications.appendChild(sectionPost);
-    publications.appendChild(sectionLike); 
+    publications.appendChild(sectionLik); 
     
 
-    let likePoints = document.querySelector(`#likecount${keyPost}`); 
+    let likePo = document.querySelector(`#likeco${keyPost}`); 
     
 
-    let likes = document.querySelector(`#like${keyPost}`); 
+    let lik = document.querySelector(`#lik${keyPost}`); 
     
     firebase.database().ref('posts/' + keyPost) 
     .once('value', (postRef) =>{ 
@@ -109,19 +109,19 @@ function showWall(body,uid,keyPost,nameUser,img){
         const objRefLike = postLike.postWithLikes || [];  
         if(objRefLike.length===0){
             // likePoints.innerHTML=objRefLike.length; 
-            likePoints.innerHTML='';
-            likes.classList.remove('mg');
+            likePo.innerHTML='';
+            lik.classList.remove('mg');
         }else if(objRefLike.length===1){
-            likePoints.innerHTML=objRefLike.length;
-            likes.classList.add('mg');
+            likePo.innerHTML=objRefLike.length;
+            lik.classList.add('mg');
         }
-        likes.addEventListener('click', () => { 
+        lik.addEventListener('click', () => { 
             if (objRefLike.indexOf(uid) === -1) { 
                 objRefLike.push(uid); 
                 postLike.likeCount = objRefLike.length; 
-                likePoints.innerHTML=objRefLike.length;
+                likePo.innerHTML=objRefLike.length;
                 
-                likes.classList.add('mg');
+                lik.classList.add('mg');
 
                 postLike.postWithLikes = objRefLike; 
                 let updates = {}; 
@@ -135,8 +135,8 @@ function showWall(body,uid,keyPost,nameUser,img){
                 objRefLike.splice(objRefLike.indexOf(uid), 1);
                 postLike.likeCount = objRefLike.length;
                 //likePoints.innerHTML=objRefLike.length;
-                likePoints.innerHTML='';
-                likes.classList.remove('mg');
+                likePo.innerHTML='';
+                lik.classList.remove('mg');
                 postLike.postWithLikes = objRefLike; 
                 let updates = {}; 
                 updates['/posts/' + keyPost] = postLike; 
@@ -229,7 +229,7 @@ btnLogout.addEventListener('click',()=>{
 });
 
 
-function showPublications(postContent,userId,keyPost){ 
+function showPublications(postContent,userId,keyPost,nameUs,imgU){ 
     let publications = document.createElement('div');
     publications.setAttribute('class', 'divPost'); 
 
@@ -280,7 +280,8 @@ function showPublications(postContent,userId,keyPost){
     allBtns.appendChild(btnDelete);
     allBtns.appendChild(btnEdit);
 
-    let likePoints = document.querySelector(`#likecount${keyPost}`); 
+    let likePoints = document.querySelector(`#likecount${keyPost}`);
+    likePoints.setAttribute('class','btnLike');  
     
 
     let likes = document.querySelector(`#like${keyPost}`); 
@@ -349,9 +350,12 @@ function showPublications(postContent,userId,keyPost){
 
     let edit = document.querySelector(`#edit${keyPost}`);
     edit.addEventListener('click', () => {
-        const editPost = document.getElementById(keyPost);
-      const nuevoPost = {
+      let editPost = document.getElementById(keyPost);
+      let nuevoPost = {
+            uid: userId,
           body: editPost.value,
+          username:nameUs,
+          image:imgU,
         };
 
        var updatesUser = {};
@@ -362,6 +366,7 @@ function showPublications(postContent,userId,keyPost){
 
       firebase.database().ref().update(updatesUser);
       firebase.database().ref().update(updatesPost);
+      return nuevoPost;
     });
         
     

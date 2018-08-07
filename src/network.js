@@ -15,7 +15,6 @@ function writeNewPost(uid, body,name,imageUrl) {
     
     uid: uid,
     body: body,
-    starCount: 0,
     username:name,
     image:imageUrl,
   };
