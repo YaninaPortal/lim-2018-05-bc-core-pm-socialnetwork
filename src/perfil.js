@@ -10,9 +10,18 @@ const btnSave=document.getElementById('btnSave');
 const posted=document.getElementById('posted');
 //llamando elementos de la seccion muro
 const sectionWall=document.getElementById('sectionWall');
-const publicaciones= document.getElementById('publicaciones');
+const publi= document.getElementById('publi');
 
 var database = firebase.database();
+
+const likeFirebase=(objRefLike,keyPost,uid,postLike)=>{
+    postLike.likeCount = objRefLike.length;
+    postLike.postWithLikes = objRefLike; 
+    let updates = {}; 
+    updates['/posts/' + keyPost] = postLike; 
+    updates['/user-posts/' + uid + '/' + keyPost] = postLike; 
+    return firebase.database().ref().update(updates); 
+}
 
 perfil.addEventListener('click',()=>{
     sectionWall.classList.add('hiden');
@@ -23,99 +32,318 @@ perfil.addEventListener('click',()=>{
 wall.addEventListener('click',()=>{
     sectionPerfil.classList.add('hiden');
     sectionWall.classList.remove('hiden');
+});
 
-    
-  firebase.database().ref().child('posts').once ('value',function(data){
-       let userIdLog=firebase.auth().currentUser.uid;
-       let dataUserPosts=data;
-       let arrkeypost=Object.keys(dataUserPosts.val());
-    
-      arrkeypost.forEach(keyPost=>{
-           let body=dataUserPosts.val()[keyPost].body;
-           let uid=dataUserPosts.val()[keyPost].uid;
-           let nameUser=dataUserPosts.val()[keyPost].username;
-           let img=dataUserPosts.val()[keyPost].image;
-           //creando elementos para el muro
-           let namePhoto = document.createElement('div');
-           namePhoto.setAttribute('class', 'divNamImg');
-           let image=document.createElement('img');
-           image.setAttribute('src', img);
-           image.setAttribute('width', '30'); 
-           image.setAttribute('height', '30');  
-           let namePost=document.createElement('span');
+firebase.database().ref().child('posts').once ('value',function(data){
+    let userIdLog=firebase.auth().currentUser.uid;
+    let dataUserPosts=data;
+    let arrkeypost=Object.keys(dataUserPosts.val());
+    console.log(arrkeypost);
+ 
+   arrkeypost.forEach(keyPost=>{
+        let body=dataUserPosts.val()[keyPost].body;
+        let uid=dataUserPosts.val()[keyPost].uid;
+        let nameUser=dataUserPosts.val()[keyPost].username;
+        let img=dataUserPosts.val()[keyPost].image;
+        let privacity=dataUserPosts.val()[keyPost].privacy;
+        //creando elementos para el muro
+
+        if (dataUserPosts.val()[keyPost].hasOwnProperty('privacy')){
+            let namePhoto = document.createElement('div');
+            namePhoto.setAttribute('class', 'divNamImg');
+            let image=document.createElement('img');
+            image.setAttribute('src', img);
+            image.setAttribute('width', '30'); 
+            image.setAttribute('height', '30');  
+            let namePost=document.createElement('span');
            namePost.textContent=nameUser;
 
            let publications = document.createElement('div');
-           publications.setAttribute('class', 'divPost');
-           let sectionPost=document.createElement('textarea');
-           sectionPost.setAttribute('id', keyPost);
-           sectionPost.textContent = body;
-           let sectionLik = document.createElement('div');
-      
-  
-           let pLik=document.createElement('span'); 
-           pLik.setAttribute('id', `likeco${keyPost}`);
-           let btnLik= document.createElement('input'); 
-           btnLik.setAttribute('id', `lik${keyPost}`);  
-           btnLik.setAttribute('value','Me gusta'); 
-           btnLik.setAttribute('type','button'); 
-           publicaciones.appendChild(namePhoto);
-           publicaciones.appendChild(publications);
-  
-           namePhoto.appendChild(image);
-           namePhoto.appendChild(namePost);
-  
-           publications.appendChild(sectionPost);
-           publications.appendChild(sectionLik); 
-  
-           sectionLik.appendChild(btnLik); 
-           sectionLik.appendChild(pLik);
-      
-  
-           let likePo = document.querySelector(`#likeco${keyPost}`); 
-      
-  
-           let lik = document.querySelector(`#lik${keyPost}`); 
-      
-           firebase.database().ref('posts/' + keyPost) 
-           .once('value', (postRef) =>{ 
+          publications.setAttribute('class', 'divPost');
+          let sectionPost=document.createElement('textarea');
+        
+          sectionPost.textContent = body;
+          let sectionLik = document.createElement('div');
+   
+
+          let pLik=document.createElement('span'); 
+          pLik.setAttribute('id', `likeco${keyPost}`);
+          let btnLik= document.createElement('input'); 
+          btnLik.setAttribute('id', `lik${keyPost}`);  
+          btnLik.setAttribute('value','Me gusta'); 
+          btnLik.setAttribute('type','button');
+
+          publi.appendChild(namePhoto);
+          publi.appendChild(publications);
+
+          namePhoto.appendChild(image);
+          namePhoto.appendChild(namePost);
+
+          publications.appendChild(sectionPost);
+          publications.appendChild(sectionLik); 
+
+          sectionLik.appendChild(btnLik); 
+          sectionLik.appendChild(pLik);
+   
+
+          let likePo = document.querySelector(`#likeco${keyPost}`); 
+   
+
+          let lik = document.querySelector(`#lik${keyPost}`); 
+   
+          firebase.database().ref('posts/' + keyPost) 
+          .once('value', (postRef) =>{ 
               const postLike = postRef.val();
               const objRefLike = postLike.postWithLikes || [];  
               if(objRefLike.length===0){
-                 // likePoints.innerHTML=objRefLike.length; 
+               // likePoints.innerHTML=objRefLike.length; 
                  likePo.innerHTML='';
                  lik.classList.remove('mg');
               }else if(objRefLike.length>0){
                   likePo.innerHTML=objRefLike.length;
                   lik.classList.add('mg');
                 }
-        
+     
              lik.addEventListener('click', () => { 
                  if (objRefLike.indexOf(userIdLog) === -1) { 
                       objRefLike.push(userIdLog); 
+                   
                       likePo.innerHTML=objRefLike.length;
                       lik.classList.add('mg');
-                      likeFirebase(objRefLike,keyPost,uid)
+                      likeFirebase(objRefLike,keyPost,uid,postLike)
                     } 
                   else if(objRefLike.indexOf(userIdLog)>-1){
                       objRefLike.splice(objRefLike.indexOf(userIdLog), 1);
+                   
                       likePo.innerHTML=objRefLike.length;
                       lik.classList.remove('mg');
-                      likeFirebase(objRefLike,keyPost,uid)
+                      likeFirebase(objRefLike,keyPost,uid,postLike)
                     }
-                })
-            })
-        })   
-    });
+               })
+           })
+        }else{
+            
+        }
+    })   
 });
 
-const likeFirebase=(objRefLike,keyPost,uid)=>{
-    postLike.likeCount = objRefLike.length;
-    postLike.postWithLikes = objRefLike; 
-    let updates = {}; 
-    updates['/posts/' + keyPost] = postLike; 
-    updates['/user-posts/' + uid + '/' + keyPost] = postLike; 
-    return firebase.database().ref().update(updates); 
+const showPublications=(postContent,userId,keyPost,nameUs,imgU)=>{
+    let namePhoto = document.createElement('div');
+    namePhoto.setAttribute('class','divNaImg'); 
+    let namePost=document.createElement('span');
+    namePost.textContent=nameUs;
+    let image=document.createElement('img');
+    image.setAttribute('src', imgU);
+    image.setAttribute('width', '30'); 
+    image.setAttribute('height', '30');
+
+    let publications = document.createElement('div');
+    publications.setAttribute('class', 'divPost');
+
+    
+    
+
+    let sectionPost = document.createElement('textarea');
+    sectionPost.setAttribute('id', keyPost);
+    sectionPost.textContent = postContent;
+    
+
+    let allBtns = document.createElement('div');
+    allBtns.setAttribute('class', 'allBtns');
+    
+    let divSel=document.createElement('div');
+    divSel.setAttribute('class', 'divSel');
+    let pLike=document.createElement('span'); 
+    pLike.setAttribute('id', `likecount${keyPost}`);
+
+    let select=document.createElement('select');
+    select.setAttribute('id', `share${keyPost}`);
+    let option1=document.createElement('option');
+    let option2=document.createElement('option')
+    option1.setAttribute('value', `Publico`);
+    option1.textContent='Publico';
+    option2.setAttribute('value', `Privado`);
+    option2.textContent='Privado';
+
+    let btnLike= document.createElement('div'); 
+    btnLike.setAttribute('id', `like${keyPost}`); 
+     
+    btnLike.textContent='Me gusta'; 
+    btnLike.setAttribute('class','btns'); 
+
+    
+
+    let btnEdit = document.createElement('div'); 
+    btnEdit.setAttribute('id', `edit${keyPost}`); 
+     
+    btnEdit.textContent='Editar'; 
+    btnEdit.setAttribute('class','btns'); 
+
+    let btnDelete = document.createElement('div'); 
+    btnDelete.setAttribute('id', `delet${keyPost}`); 
+     
+    btnDelete.textContent='Eliminar'; 
+    btnDelete.setAttribute('class','btns'); 
+
+    
+    
+
+    
+    posted.appendChild(namePhoto); 
+    posted.appendChild(publications);
+    posted.appendChild(divSel);
+    posted.appendChild(allBtns); 
+
+    namePhoto.appendChild(image);
+    namePhoto.appendChild(namePost)
+
+    publications.appendChild(sectionPost); 
+
+    divSel.appendChild(pLike);
+    divSel.appendChild(select);
+
+    select.appendChild(option1);
+    select.appendChild(option2);
+
+    allBtns.appendChild(btnLike);
+    allBtns.appendChild(btnDelete);
+    allBtns.appendChild(btnEdit);
+
+    let sel=document.querySelector(`#share${keyPost}`);
+    firebase.database().ref('posts/' + keyPost) 
+    .once('value', (postR) =>{ 
+        let postL = postR.val();
+        
+        let objRef=post.privacy || [];
+        
+        
+        sel.addEventListener('change', () => { 
+            if (sel.value === 'Publico') { 
+                
+                objRef.push(sel.value);
+                // objRef.splice(objRef.indexOf('Privado'), 1);
+               postL.privacy=objRef;
+              let updates = {}; 
+              updates['/posts/' + keyPost] = postL; 
+              updates['/user-posts/' + userId + '/' + keyPost] = postL; 
+              return firebase.database().ref().update(updates);
+              
+            } 
+            else /*if(sel.value === 'Privado')*/{
+                
+                
+                objRef.splice(objRef.indexOf('Publico'), 1);
+                // objRef.push(sel.value);
+                
+                postL.privacy=objRef;
+               let updates = {}; 
+               updates['/posts/' + keyPost] = postL; 
+               updates['/user-posts/' + userId + '/' + keyPost] = postL; 
+               return firebase.database().ref().update(updates);
+                   
+            }
+        //     const postLike = postRef.val();
+        // const objRefLike = postLike.postWithLikes || [];  
+        // 
+        // 
+        // likes.addEventListener('click', () => { 
+        //     if (objRefLike.indexOf(userId) === -1) { 
+        //         objRefLike.push(userId);
+                 
+        //         likePoints.innerHTML=objRefLike.length;
+        //         likes.classList.add('mg');
+        //         likeFirebase(objRefLike,keyPost,userId,postLike);
+        //     } 
+        //     else if(objRefLike.indexOf(userId)>-1){
+        //         objRefLike.splice(objRefLike.indexOf(userId), 1);
+                
+        //         likePoints.innerHTML=objRefLike.length;
+        //         likes.classList.remove('mg');
+        //         likeFirebase(objRefLike,keyPost,userId,postLike);
+               
+        //     }
+            // postLike.likeCount = objRefLike.length;
+            // postLike.postWithLikes = objRefLike; 
+            // let updates = {}; 
+            // updates['/posts/' + keyPost] = postLike; 
+            // updates['/user-posts/' + uid + '/' + keyPost] = postLike; 
+            // return firebase.database().ref().update(updates); 
+        }) 
+        
+    
+    })
+
+    
+    
+
+
+
+    let likePoints = document.querySelector(`#likecount${keyPost}`);
+    likePoints.setAttribute('class','btnLike');  
+    
+
+    let likes = document.querySelector(`#like${keyPost}`); 
+    firebase.database().ref('posts/' + keyPost) 
+    .once('value', (postRef) =>{ 
+        const postLike = postRef.val();
+        const objRefLike = postLike.postWithLikes || [];  
+        if(objRefLike.length===0){
+            // likePoints.innerHTML=objRefLike.length; 
+            likePoints.innerHTML='';
+            likes.classList.remove('mg');
+        }else if(objRefLike.length===1){
+            likePoints.innerHTML=objRefLike.length;
+            likes.classList.add('mg');
+        }
+        likes.addEventListener('click', () => { 
+            if (objRefLike.indexOf(userId) === -1) { 
+                objRefLike.push(userId);
+                 
+                likePoints.innerHTML=objRefLike.length;
+                likes.classList.add('mg');
+                likeFirebase(objRefLike,keyPost,userId,postLike);
+            } 
+            else if(objRefLike.indexOf(userId)>-1){
+                objRefLike.splice(objRefLike.indexOf(userId), 1);
+                
+                likePoints.innerHTML=objRefLike.length;
+                likes.classList.remove('mg');
+                likeFirebase(objRefLike,keyPost,userId,postLike);
+               
+            }
+        }) 
+    })
+    let delet = document.querySelector(`#delet${keyPost}`);
+    delet.addEventListener('click', () => {
+        firebase.database().ref().child('/user-posts/' + userId + '/' + keyPost).remove();
+        firebase.database().ref().child('posts/' + keyPost).remove();
+   
+        while(posted.firstChild) posted.removeChild(posted.firstChild);
+        reload_page()
+    });
+
+    let edit = document.querySelector(`#edit${keyPost}`);
+    edit.addEventListener('click', (e) => {
+      let editPost = document.querySelector(`#${keyPost}`);
+      let nuevoPost = {
+           uid: userId,
+           body: editPost.value,
+           username:nameUs,
+           image:imgU,
+        };
+
+       var updatesUser = {};
+       var updatesPost = {};
+
+       updatesUser['/user-posts/' + userId + '/' + keyPost] = nuevoPost;
+       updatesPost['/posts/' + keyPost ] = nuevoPost;
+
+      firebase.database().ref().update(updatesUser);
+      firebase.database().ref().update(updatesPost);
+      reload_page()
+    });
+        
+    
 }
 
 window.onload = ( ) =>{
@@ -143,8 +371,10 @@ window.onload = ( ) =>{
                 arrkeypost.forEach(keyPost=>{
                     //console.log(keyPost)
                     let body=dataUserPosts.val()[user.uid][keyPost].body;
+                    let nameUs=dataUserPosts.val()[user.uid][keyPost].username;
+                    let imgU=dataUserPosts.val()[user.uid][keyPost].image;
                     //console.log(body);
-                    showPublications(body,user.uid,keyPost);
+                    showPublications(body,user.uid,keyPost,nameUs,imgU);
                 });
             })    
         } else {
@@ -177,166 +407,6 @@ btnLogout.addEventListener('click',()=>{
     });
 });
 
-
-const showPublications=(postContent,userId,keyPost,nameUs,img)=>{
-    let namePhoto = document.createElement('div');
-    namePhoto.setAttribute('class','divNameImg'); 
-    let namePost=document.createElement('span');
-    namePost.textContent=nameUs;
-    let image=document.createElement('img');
-    image.setAttribute('src', img);
-    image.setAttribute('width', '30'); 
-    image.setAttribute('height', '30');
-
-    let publications = document.createElement('div');
-    publications.setAttribute('class', 'divPost');
-
-    
-    
-
-    let sectionPost = document.createElement('textarea');
-    sectionPost.setAttribute('id', keyPost);
-    sectionPost.textContent = postContent;
-    
-
-    let allBtns = document.createElement('div');
-    allBtns.setAttribute('class', 'allBtns');
-    
-
-    
-    let pLike=document.createElement('div'); 
-    pLike.setAttribute('id', `likecount${keyPost}`);
-
-    let btnLike= document.createElement('div'); 
-    btnLike.setAttribute('id', `like${keyPost}`); 
-     
-    btnLike.textContent='Me gusta'; 
-    btnLike.setAttribute('class','btns'); 
-
-    
-
-    let btnEdit = document.createElement('div'); 
-    btnEdit.setAttribute('id', `edit${keyPost}`); 
-     
-    btnEdit.textContent='Editar'; 
-    btnEdit.setAttribute('class','btns'); 
-
-    let btnDelete = document.createElement('div'); 
-    btnDelete.setAttribute('id', `delet${keyPost}`); 
-     
-    btnDelete.textContent='Eliminar'; 
-    btnDelete.setAttribute('class','btns'); 
-
-    
-    
-
-    
-    posted.appendChild(namePhoto); 
-    posted.appendChild(publications);
-    posted.appendChild(pLike);
-    posted.appendChild(allBtns); 
-
-    namePhoto.appendChild(image);
-    namePhoto.appendChild(namePost)
-
-    publications.appendChild(sectionPost); 
-
-    allBtns.appendChild(btnLike);
-    allBtns.appendChild(btnDelete);
-    allBtns.appendChild(btnEdit);
-
-    let likePoints = document.querySelector(`#likecount${keyPost}`);
-    likePoints.setAttribute('class','btnLike');  
-    
-
-    let likes = document.querySelector(`#like${keyPost}`); 
-    
-        //let userId = firebase.auth().currentUser.uid; 
-        //const currentPost = document.getElementById(`like${keyPost}`); 
-        //const likeButton = likes.querySelector('.like-button'); 
-    firebase.database().ref('posts/' + keyPost) 
-    .once('value', (postRef) =>{ 
-        const postLike = postRef.val();
-        const objRefLike = postLike.postWithLikes || [];  
-        if(objRefLike.length===0){
-            // likePoints.innerHTML=objRefLike.length; 
-            likePoints.innerHTML='';
-            likes.classList.remove('mg');
-        }else if(objRefLike.length===1){
-            likePoints.innerHTML=objRefLike.length;
-            likes.classList.add('mg');
-        }
-        likes.addEventListener('click', () => { 
-            if (objRefLike.indexOf(userId) === -1) { 
-                objRefLike.push(userId); 
-                postLike.likeCount = objRefLike.length; 
-                likePoints.innerHTML=objRefLike.length;
-                
-                likes.classList.add('mg');
-
-                postLike.postWithLikes = objRefLike; 
-                let updates = {}; 
-                updates['/posts/' + keyPost] = postLike; 
-                updates['/user-posts/' + userId + '/' + keyPost] = postLike; 
-                return firebase.database().ref().update(updates); 
-            } //else if (objRefLike.indexOf(userId) === 0) { 
-              //likeButton.disabled = false; 
-              //}
-            else if(objRefLike.indexOf(userId)>-1){
-                objRefLike.splice(objRefLike.indexOf(userId), 1);
-                postLike.likeCount = objRefLike.length;
-                //likePoints.innerHTML=objRefLike.length;
-                likePoints.innerHTML='';
-                likes.classList.remove('mg');
-                postLike.postWithLikes = objRefLike; 
-                let updates = {}; 
-                updates['/posts/' + keyPost] = postLike; 
-                updates['/user-posts/' + userId + '/' + keyPost] = postLike; 
-                return firebase.database().ref().update(updates); 
-            }
-              //postLike.postWithLikes = objRefLike; 
-
-               //let updates = {}; 
-              //updates['/posts/' + keyPost] = postLike; 
-              //updates['/user-posts/' + userId + '/' + keyPost] = postLike; 
-               //return firebase.database().ref().update(updates); 
-            })
-        }) 
-    
-
-    let delet = document.querySelector(`#delet${keyPost}`);
-    delet.addEventListener('click', () => {
-        firebase.database().ref().child('/user-posts/' + userId + '/' + keyPost).remove();
-        firebase.database().ref().child('posts/' + keyPost).remove();
-   
-        while(posted.firstChild) posted.removeChild(posted.firstChild);
-        reload_page()
-    });
-
-    let edit = document.querySelector(`#edit${keyPost}`);
-    edit.addEventListener('click', () => {
-      let editPost = document.getElementById(keyPost);
-      let nuevoPost = {
-            uid: userId,
-          body: editPost.value,
-          username:nameUs,
-          image:imgU,
-        };
-
-       var updatesUser = {};
-       var updatesPost = {};
-
-      updatesUser['/user-posts/' + userId + '/' + keyPost] = nuevoPost;
-      updatesPost['/posts/' + keyPost ] = nuevoPost;
-
-      firebase.database().ref().update(updatesUser);
-      firebase.database().ref().update(updatesPost);
-      return nuevoPost;
-    });
-        
-    
-}
-   
 const reload_page=()=> {
     window.location.reload();
 }; 
