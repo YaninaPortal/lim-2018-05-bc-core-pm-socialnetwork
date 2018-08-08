@@ -9,17 +9,21 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <title>Soy Feminista</title>
+    <link rel="icon" href="../image/logo-favicon.ico">
 </head>
 
 <body>
     <!-- NAVIGATION -->
-    <nav class="navbar navbar-expand navbar-light fondoNavbar">
-        <a class="navbar-brand" href="#">Soy Feminista!!!</a>
+    <nav class="navbar navbar-expand navbar-light p-3 pb-4 fondoNavbar">
+        <a class="navbar-brand text-white bg-primary" href="#">
+            <p>
+                <img src="../image/logo-favicon.ico" alt="logo"> Soy Feminista</p>
+        </a>
         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span> 
         </button>-->
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse bg-primary " id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link active mr-2 " id="wall" value="muro" href="#">
                     <span>
@@ -50,21 +54,28 @@
             </div>
         </div>
     </nav>
-     <!-- muro -->
-     
-    <div id="contenido" class="divPerfil fond"></div>
-    <div  class="text" >
-        <textarea name="publication" id="post" cols="30" rows="5"></textarea><br>
-        <button type="button" value="publicar" id="btnSave" >Publicar</button>
-    </div>
-    <div id="sectionWall"  class ="hiden">
-        <div id="contentWall" >
-            <div id="publicaciones" ></div>
+    <!-- Perfil -->
+    <div class="container-fluid p-5 fond">
+        <div class="row">
+            <div id="contenido" class=" container-fluid  col-sm-4  fond "></div>
+            <div class="container-fluid  col-sm-8 fond">
+                <textarea name="publication" id="post" cols="30" rows="5"></textarea>
+                <br>
+                <button type="button" value="publicar" id="btnSave">Publicar</button>
+            </div>
         </div>
     </div>
-    <div id ="sectionPerfil" >
-        <div>
-           <div id="posted"></div>
+    <!-- Muro -->
+    <div class="container-fluid">
+        <div id="sectionWall" class="hiden fond">
+            <div id="contentWall">
+                <div id="publicaciones"></div>
+            </div>
+        </div>
+        <div id="sectionPerfil">
+            <div>
+                <div id="posted"></div>
+            </div>
         </div>
     </div>
 

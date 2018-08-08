@@ -1,5 +1,6 @@
 * *{
     font-family: 'Lobster', cursive;
+   
   }
    body{
      height: 100%; 
@@ -18,6 +19,11 @@
   
     }
 
+.fondoNavbar{
+ background-color: #007bff;
+ opacity: 0.7;  
+}    
+
 .fond{
  background-color: #F9FCFD;
  color: #000000;
@@ -27,10 +33,6 @@
  background-color: #1DABF2;
  color:#000000;
    }  
-
-.fondoNavbar{
- background-color: #1DABF2; 
- }
 
 .hiden{
 display:none;
@@ -116,22 +118,6 @@ input:focus .invalid {
     
     
 }
-/*clase de la seccion donde sale foto nombre correo*/
-.divPerfil{
-    border-style: solid;
-    border-width: 2.5em 15em 0.1em;
-    border-color: #F9FCFD;
-    text-align: center;
-}
-
-/*clase de la seccion donde se escribe el texto para publicar*/
-.text{
-    border-style: solid;
-    border-width: 0em 15em 0em;
-    border-color: #E9EBEE;
-    text-align: center;
-}
-/*clase para el titulo donde dice publicacion*/
 
 /*clase para cada post q se cree*/
 .divPost{
