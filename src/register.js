@@ -75,10 +75,10 @@ btnregister.addEventListener('click',()=>{
   firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
   .then(function(result){
       if (password.value===confirmPassword.value) {
-        let user=result.user
+        let user=result.user;
         window.location.href='perfil.html';
         let photoURL='http://droidlessons.com/wp-content/uploads/2017/05/person-1824144_960_720-e1494184045144.png';
-        writeUserData(user.uid, name.value,user.email, photoURL);
+        writeUserData(user.uid, name.value, email.value, photoURL);
         
 
         
