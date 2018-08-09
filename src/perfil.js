@@ -363,19 +363,24 @@ window.onload = ( ) =>{
 }
 
 btnSave.addEventListener('click',()=>{
-    let userId=firebase.auth().currentUser.uid;
-    let displayName=firebase.auth().currentUser.displayName;
-    if(displayName!=null){
-        let imageUrl=firebase.auth().currentUser.photoURL;
-        const newPost=writeNewPost(userId,post.value,displayName,imageUrl);
-        reload_page();
+
+    if(post.value !=''){
+        let userId=firebase.auth().currentUser.uid;
+        let displayName=firebase.auth().currentUser.displayName;
+        if(displayName!=null){
+           let imageUrl=firebase.auth().currentUser.photoURL;
+           const newPost=writeNewPost(userId,post.value,displayName,imageUrl);
+           reload_page();
+        }else{
+            firebase.database().ref().child('users').on ('value',function(data){
+              let nm=data.val()[userId].username
+              let images='http://droidlessons.com/wp-content/uploads/2017/05/person-1824144_960_720-e1494184045144.png';
+              const nePost=writeNewPost(userId,post.value,nm,images);
+              reload_page();
+           })
+       }
     }else{
-        firebase.database().ref().child('users').on ('value',function(data){
-          let nm=data.val()[userId].username
-          let images='http://droidlessons.com/wp-content/uploads/2017/05/person-1824144_960_720-e1494184045144.png';
-          const nePost=writeNewPost(userId,post.value,nm,images);
-         reload_page();
-        })
+        alert('ingrese la publicacion')
     }
 })
 
