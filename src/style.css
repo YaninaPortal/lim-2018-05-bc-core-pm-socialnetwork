@@ -140,7 +140,7 @@ input:focus .invalid {
 }
 /*clase para medidas de los 3 botones */
 .btns{
-    width: 18.6em;
+    width: 33.3%;
     border: solid;
     border-color: #E9EBEE;
     border-width: 0px 0px 0.2px 1px;
@@ -184,8 +184,8 @@ input:focus .invalid {
     border-color: #E9EBEE; 
 } */
 
-/*para responsive solo con galaxy s5*/
-@media only screen and (max-width: 360px) {
+
+@media only screen and (max-width: 1024px) {
 
    .divNamImg{
         padding:  10px 10px;
@@ -208,14 +208,13 @@ input:focus .invalid {
     .allBtns{
        border-width: 0px 0px 20px;   
     }
-    .btns{
-        width: 7.3em;
-        display: inline-block
-    }
+    
     .divSel{
         
         border-width: 0em ;
         
     }
-   
+   .phrase{
+       display:none;
+   }
 }

@@ -23,6 +23,10 @@ const likeFirebase=(objRefLike,keyPost,uid,postLike)=>{
     return firebase.database().ref().update(updates); 
 }
 
+const reload_page=()=> {
+    window.location.reload();
+}; 
+
 perfil.addEventListener('click',()=>{
     sectionWall.classList.add('hiden');
     sectionPerfil.classList.remove('hiden');
@@ -38,7 +42,7 @@ firebase.database().ref().child('posts').once ('value',function(data){
     let userIdLog=firebase.auth().currentUser.uid;
     let dataUserPosts=data;
     let arrkeypost=Object.keys(dataUserPosts.val());
-    console.log(arrkeypost);
+    // console.log(arrkeypost);
  
    arrkeypost.forEach(keyPost=>{
         let body=dataUserPosts.val()[keyPost].body;
@@ -158,8 +162,10 @@ const showPublications=(postContent,userId,keyPost,nameUs,imgU)=>{
 
     let select=document.createElement('select');
     select.setAttribute('id', `share${keyPost}`);
+    
     let option1=document.createElement('option');
-    let option2=document.createElement('option')
+    let option2=document.createElement('option');
+    
     option1.setAttribute('value', `Publico`);
     option1.textContent='Publico';
     option2.setAttribute('value', `Privado`);
@@ -185,10 +191,6 @@ const showPublications=(postContent,userId,keyPost,nameUs,imgU)=>{
     btnDelete.textContent='Eliminar'; 
     btnDelete.setAttribute('class','btns'); 
 
-    
-    
-
-    
     posted.appendChild(namePhoto); 
     posted.appendChild(publications);
     posted.appendChild(divSel);
@@ -201,7 +203,7 @@ const showPublications=(postContent,userId,keyPost,nameUs,imgU)=>{
 
     divSel.appendChild(pLike);
     divSel.appendChild(select);
-
+   
     select.appendChild(option1);
     select.appendChild(option2);
 
@@ -213,9 +215,14 @@ const showPublications=(postContent,userId,keyPost,nameUs,imgU)=>{
     firebase.database().ref('posts/' + keyPost) 
     .once('value', (postR) =>{ 
         let postL = postR.val();
-        
+        // console.log(postL);
         let objRef=post.privacy || [];
         
+        if (postL.hasOwnProperty('privacy')){
+            sel.value='Publico';
+        }else {
+            sel.value='Privado';
+        }
         
         sel.addEventListener('change', () => { 
             if (sel.value === 'Publico') { 
@@ -229,7 +236,7 @@ const showPublications=(postContent,userId,keyPost,nameUs,imgU)=>{
               return firebase.database().ref().update(updates);
               
             } 
-            else /*if(sel.value === 'Privado')*/{
+            else if(sel.value === 'Privado'){
                 
                 
                 objRef.splice(objRef.indexOf('Publico'), 1);
@@ -242,41 +249,11 @@ const showPublications=(postContent,userId,keyPost,nameUs,imgU)=>{
                return firebase.database().ref().update(updates);
                    
             }
-        //     const postLike = postRef.val();
-        // const objRefLike = postLike.postWithLikes || [];  
-        // 
-        // 
-        // likes.addEventListener('click', () => { 
-        //     if (objRefLike.indexOf(userId) === -1) { 
-        //         objRefLike.push(userId);
-                 
-        //         likePoints.innerHTML=objRefLike.length;
-        //         likes.classList.add('mg');
-        //         likeFirebase(objRefLike,keyPost,userId,postLike);
-        //     } 
-        //     else if(objRefLike.indexOf(userId)>-1){
-        //         objRefLike.splice(objRefLike.indexOf(userId), 1);
-                
-        //         likePoints.innerHTML=objRefLike.length;
-        //         likes.classList.remove('mg');
-        //         likeFirebase(objRefLike,keyPost,userId,postLike);
-               
-        //     }
-            // postLike.likeCount = objRefLike.length;
-            // postLike.postWithLikes = objRefLike; 
-            // let updates = {}; 
-            // updates['/posts/' + keyPost] = postLike; 
-            // updates['/user-posts/' + uid + '/' + keyPost] = postLike; 
-            // return firebase.database().ref().update(updates); 
+        
         }) 
         
     
     })
-
-    
-    
-
-
 
     let likePoints = document.querySelector(`#likecount${keyPost}`);
     likePoints.setAttribute('class','btnLike');  
@@ -315,11 +292,13 @@ const showPublications=(postContent,userId,keyPost,nameUs,imgU)=>{
     })
     let delet = document.querySelector(`#delet${keyPost}`);
     delet.addEventListener('click', () => {
-        firebase.database().ref().child('/user-posts/' + userId + '/' + keyPost).remove();
-        firebase.database().ref().child('posts/' + keyPost).remove();
+        if(confirm('¿Está seguro que desea eliminar esta publicación?')){
+          firebase.database().ref().child('/user-posts/' + userId + '/' + keyPost).remove();
+          firebase.database().ref().child('posts/' + keyPost).remove();
    
-        while(posted.firstChild) posted.removeChild(posted.firstChild);
-        reload_page()
+          while(posted.firstChild) posted.removeChild(posted.firstChild);
+          reload_page()
+        }else{alert('No se borro nada')}
     });
 
     let edit = document.querySelector(`#edit${keyPost}`);
@@ -391,9 +370,12 @@ btnSave.addEventListener('click',()=>{
         const newPost=writeNewPost(userId,post.value,displayName,imageUrl);
         reload_page();
     }else{
-        let images='http://droidlessons.com/wp-content/uploads/2017/05/person-1824144_960_720-e1494184045144.png';
-        const nePost=writeNewPost(userId,post.value,displayName,images);
-        reload_page();
+        firebase.database().ref().child('users').on ('value',function(data){
+          let nm=data.val()[userId].username
+          let images='http://droidlessons.com/wp-content/uploads/2017/05/person-1824144_960_720-e1494184045144.png';
+          const nePost=writeNewPost(userId,post.value,nm,images);
+         reload_page();
+        })
     }
 })
 
@@ -406,7 +388,3 @@ btnLogout.addEventListener('click',()=>{
         console.log('error al cerrar sesion');
     });
 });
-
-const reload_page=()=> {
-    window.location.reload();
-}; 

@@ -5,7 +5,7 @@ let  confirmPassword = document.getElementById('confirmPassword');
 const  btnregister = document.getElementById('btnregister');
 const error = document.querySelector('.error');
 const err = document.querySelector('.err');
-
+let msgErr=document.querySelector('.msgErr');
 email.addEventListener('keyup',()=>{
  
   let test =validation(email.value);
@@ -15,22 +15,38 @@ email.addEventListener('keyup',()=>{
    email.classList.remove("invalid");
    error.classList.remove("error");
    error.classList.remove("erroractive");
-   
-   
- } else if(email.value.length === 0){
+  } else if(email.value.length === 0){
    email.classList.remove("valid");
    error.classList.add("error");
    email.classList.add("invalid");
    error.innerHTML = "ingresa email";
    error.classList.add("erroractive");
  }else{
-  email.classList.remove("valid");
-  error.classList.add("error");
-  email.classList.add("invalid");
-  error.innerHTML = "email incorrecto";
-  error.classList.add("erroractive");
+   email.classList.remove("valid");
+   error.classList.add("error");
+   email.classList.add("invalid");
+   error.innerHTML = "email incorrecto";
+   error.classList.add("erroractive");
  }
 });
+
+
+password.addEventListener('keyup', ()=>{
+  let verifiedPass=password.value;
+  if(verifiedPass.length>=6){
+    password.classList.add('valid');
+    msgErr.innerHTML = '';
+    password.classList.remove('invalid');
+    msgErr.classList.remove('error');
+    msgErr.classList.remove('erroractive');
+  }else{
+    password.classList.remove('valid');
+    msgErr.classList.add('error');
+    password.classList.add('invalid');
+    msgErr.innerHTML = 'Debe ingresar al menos 6 caracteres';
+    msgErr.classList.add('erroractive');
+  }
+})
 
 confirmPassword.addEventListener('keyup',()=>{
    

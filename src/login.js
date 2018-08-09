@@ -5,6 +5,7 @@ const showRegister=document.getElementById('showRegister');
 const facebook =document.getElementById('facebook');
 const google =document.getElementById('google');
 const error = document.querySelector('.error');
+const msgEr = document.querySelector('.msgEr');
 window.onload = ( ) =>{
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -32,27 +33,42 @@ mail.addEventListener('keyup',()=>{
     
    let test= validation(mail.value);
    if (test) {
-     mail.classList.add("valid");
-     error.innerHTML = " ";
-     mail.classList.remove("invalid");
-     error.classList.remove("error");
-     error.classList.remove("erroractive");
-     
-     
-   } else if(mail.value.length === 0){
-     mail.classList.remove("valid");
-     error.classList.add("error");
-     mail.classList.add("invalid");
-     error.innerHTML = "ingresa email";
-     error.classList.add("erroractive");
+      mail.classList.add('valid');
+      error.innerHTML = '' ;
+      mail.classList.remove('invalid');
+      error.classList.remove('error');
+      error.classList.remove('erroractive');
+    } else if(mail.value.length === 0){
+      mail.classList.remove('valid');
+      error.classList.add('error');
+      mail.classList.add('invalid');
+      error.innerHTML = 'ingresa email';
+      error.classList.add('erroractive');
    }else{
-    mail.classList.remove("valid");
-    error.classList.add("error");
-    mail.classList.add("invalid");
-    error.innerHTML = "email incorrecto";
-    error.classList.add("erroractive");
+      mail.classList.remove('valid');
+      error.classList.add('error');
+      mail.classList.add('invalid');
+      error.innerHTML = 'email incorrecto';
+      error.classList.add('erroractive');
    }
 });
+
+pass.addEventListener('keyup', ()=>{
+    let verifiedPass=pass.value;
+    if(verifiedPass.length>=6){
+        pass.classList.add('valid');
+        msgEr.innerHTML = '';
+        pass.classList.remove('invalid');
+        msgEr.classList.remove('error');
+        msgEr.classList.remove('erroractive');
+    }else{
+        pass.classList.remove('valid');
+        msgEr.classList.add('error');
+        pass.classList.add('invalid');
+        msgEr.innerHTML = 'Debe ingresar al menos 6 caracteres';
+        msgEr.classList.add('erroractive');
+    }
+})
 
 
 btnsignin.addEventListener('click',()=> {
